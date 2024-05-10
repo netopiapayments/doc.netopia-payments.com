@@ -9,7 +9,6 @@ title: API Integration
 This module made to use as an example of implementation for online payment via Card in PHP 
 
 ## Generic Payment Request/Response Flow
-<img src="img/NETOPIA_Payments_flow.png">
 
 The user will be redirected from the Merchant's website to NETOPIA Payments server together with a payment request. Based on the merchant account settings in NETOPIA's platform, various payment input methods might be displayed (e.g. Google Pay)
 
@@ -31,7 +30,7 @@ payment encryption
 
 ## Payment Request Structure
 In order to send the payment request to NETOPIA Payments , you need to encrypt the payment data on **POST** method and encapsulate the information using the following structure.  
-
+```xml
         <?xml version="1.0" encoding="utf-8"?>
         <order type="card" id="string64" timestamp="YYYYmmddHHiiss">
             <signature>XXXX-XXXX-XXXX-XXXX-XXXX</signature>
@@ -67,6 +66,7 @@ In order to send the payment request to NETOPIA Payments , you need to encrypt t
                 </return>
             </url>
         </order>
+```
 - ### Confirm URL
     The confirm URL will be used for IPN (Instant Payment Notification) - i.e. to send information about the transaction's status.
 - ### Redirect URL
@@ -74,7 +74,7 @@ In order to send the payment request to NETOPIA Payments , you need to encrypt t
 
 ## Payment Response Structure
 The response from NETOPIA Payments to your confirm URL will be in following structure
-
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <order type="card" id="string64" timestamp="YYYYMMDDHHMMSS">
     {your_request_XML}
@@ -97,17 +97,17 @@ The response from NETOPIA Payments to your confirm URL will be in following stru
             <error code="N">error_message</error>
         </mobilpay>
     </order>
-
+```
 ## Merchant's Response
 For each call to your confirm URL, the Merchant will need to respond in XML format back to NETOPIA Payments, in order to help us understand whether you have successfully recorded the response or not.
 
 For debugging purposes, you may view your response in mobilPay console (Order – Details – Merchant Communication Log)
 
 The following annotated description of the XML response structure shows the elements sent by you to the NETOPIA Payments API.
-
+```xml
     <?xml version="1.0" encoding="utf-8" ?>
     <crc error_type=”1|2” error_code=”{numeric}”>{message}</crc>
-
+```
 The attributes of the crc element are only sent if you had any problem recording
 the **IPN**.
 - ### error_type 
@@ -131,8 +131,6 @@ There are three levels of security:
 on the merchant side, for the response.
 
 NETOPIA Payments API service is supporting the **3-D Secure** transactions (both v1 and v2)
-
-<hr>
 
 ### APPENDIX
 #### Error Code Values

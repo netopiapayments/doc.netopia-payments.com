@@ -5,33 +5,30 @@ title: PHP SDK
 
 # Composer PHP
 
-<div align="center" background-color: rgba(0,0,0,.5)><a href="https://netopia-payments.com/"><img alt="Parsedown" src="https://netopia-payments.com/core/assets/5993428bab/images/logo.png" width="240" /></a></div>
-
 ## NETOPIA Payments Composer
 
 ### Installation
 Run the following command from root of your project 
-* <code>composer require netopia/payment</code>
+* ```composer require netopia/payment```
 #### or 
 * add the **"netopia/payment"** to your **composer.json** file like the following example
-    <code>
+    ```
 
         "require": {
             ...
             "netopia/payment": "^1.1",
             ...
         }
-    </code>
+    ```
     
     and then run the following command from your Terminal
     
-    <code>composer install</code>
+    ```composer install```
     
 ### Example    
 
 ##### An example of Payment Request in Laravel 
-<code>
-
+```php
     ...
     
     use Netopia\Payment\Address;
@@ -158,11 +155,11 @@ Run the following command from root of your project
         ...
     }    
     
-</code>
+```
 
 #### An example of IPN in Laravel
 
-<code>
+```
     
     ...
     
@@ -289,7 +286,7 @@ Run the following command from root of your project
     
         }
     }
-</code>
+```
 
 ##### Note / Suggestions
 * if there is issue with namespace in your platform , you can solve it by getting help from Service Providers. 

@@ -12,12 +12,12 @@ title: Magento Plugin
 
 ## Installation
 The Module placed in folder "Netopia"
-1. put **Netopia** folder inside of <your_magento_root>/app/code/
+1. put **Netopia** folder inside of < your_magento_root >/app/code/
     * verify the ownership & make sure have right user and/or group ownership
 2. SSH to your Magento server and run the following commands
-    * <code>php bin/magento setup:upgrade</code>
-    * <code>php bin/magento setup:static-content:deploy</code>
-    * <code>php bin/magento ca:cl</code>
+    * `php bin/magento setup:upgrade`
+    * `php bin/magento setup:static-content:deploy`
+    * `php bin/magento ca:cl`
 3.  Complete the **Configuration**   
 4.  **Enable** the module.
     ###### Additional option
@@ -31,11 +31,11 @@ The Module placed in folder "Netopia"
 
 ## Verification
 By run the following command you can make sure, if this module is installed successfully on your Magento Proiect
-* <code>php bin/magento module:status</code>
+* ```php bin/magento module:status```
 
 ## After installation
 Recommended to firstly, go to Admin panel & fill the necessary data
-<code><your_magento_admin>->Stores->Configuration->Sales->Payment Methods->Netopia Payments</code>
+```<your_magento_admin>->Stores->Configuration->Sales->Payment Methods->Netopia Payments```
 
 * #### Configuration
     * **Base configuration** : To enable / disable the payment method, switch to Live or Sandbox, ....
@@ -48,13 +48,13 @@ Recommended to firstly, go to Admin panel & fill the necessary data
     Note : The fileds are not complited from configuration section, will set by default value, 
 
 ## Where Keys / Certificates are located
-The Public & Private Keys for Live and Sandbox are located in <your_magento_root>/app/code/Netopia/Netcard/etc/certificates
+The Public & Private Keys for Live and Sandbox are located in < your_magento_root >/app/code/Netopia/Netcard/etc/certificates
 * make sure you have right ownership & permition
 ### Other general usefull note
 If in any case you update/upgrade your Magento Module & not see the changes, so maybe is cached.
-You can using such command like this <code>php bin/magento ca:cl</code> to clean the cache or
-Using such command <code>bin/magento setup:di:compile</code> to compile or regenerate your modules.
-Sometime remove the contents of actual cache folders such as <code>MagentoRoot/var/cache/</code> | <code>MagentoRoot/var/page_cache/</code> | <code>MagentoRoot/generated/code</code> is helping too
+You can using such command like this ```php bin/magento ca:cl``` to clean the cache or
+Using such command ```bin/magento setup:di:compile``` to compile or regenerate your modules.
+Sometime remove the contents of actual cache folders such as ```MagentoRoot/var/cache/``` | ```MagentoRoot/var/page_cache/``` | ```MagentoRoot/generated/code``` is helping too
 
 ##### Good to know
 * To get the module compatible with previous versions of Magento, using the other branches of this GitHub repository. for ex. for Magento Version 2.3.X we can get the module by run git command like : **git clone --single-branch --branch V2.3 https://github.com/mobilpay/Magento.git**
