@@ -6,7 +6,7 @@ sidebar_position: 1
 To initiate a new payment, you will begin from the **start** end-point.
 With the help of this  end-point you will send full details of a single transaction to NETOPIA Payments' server.
 
-Based on the **start** end-point **response** you might need to continue the 3DSecure authentication process with **[authorize](authorize/authorize-strc.md)**.
+Based on the **start** end-point **response** you might need to continue the 3DSecure authentication process with **[authorize](../authorize/authorize-strc.md)**.
 
 ## Start payment endpoint
 

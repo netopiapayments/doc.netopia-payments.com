@@ -33,7 +33,7 @@ On start end-point response we have **customerAction**->**type**. if the value i
 
 Also, easily we have **error code** and **payment status**. Any transaction with 3DS card will have **error code 100** and **payment status 15** in start end-point response.
 
-please, check **[Errors & Statuses](../../docs/start/start-Error)** for get more information
+please, check **[Errors & Statuses](../start/start-Error)** for get more information
 
 
 ## How to get "authentication URL" of Card holder Bank

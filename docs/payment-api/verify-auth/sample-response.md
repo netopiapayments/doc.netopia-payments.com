@@ -44,4 +44,4 @@ title: Sample Response
 }
 ```
 
-Please, check **[Errors & Statuses](../../docs/start/start-Error)** for get more information about **error** codes & **status** codes
+Please, check **[Errors & Statuses](../start/start-Error)** for get more information about **error** codes & **status** codes
