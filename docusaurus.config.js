@@ -3,8 +3,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Netopia Development Portal',
-  tagline: 'Get started with Netopia Payments APIs',
+  title: 'NETOPIA Development Portal',
+  tagline: 'Get started with NETOPIA Payments APIs',
   favicon: 'img/favicon.ico',
   url: 'https://docs.netopia-payments.com',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -47,9 +47,9 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Netopia Developer Portal',
+        title: 'NETOPIA Developer Portal',
         logo: {
-          alt: 'Netopia Developer Portal',
+          alt: 'NETOPIA Developer Portal',
           src: 'img/logo.svg',
         },
         items: [
@@ -70,10 +70,10 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Netopia services',
+            title: 'NETOPIA services',
             items: [
               {
-                label: 'Netopia Payments',
+                label: 'NETOPIA Payments',
                 to: 'https://netopia-payments.com',
               },
               {
@@ -104,7 +104,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Netopia Payments.`,
+        copyright: `Copyright © ${new Date().getFullYear()} NETOPIA Payments.`,
       },
       prism: {
         theme: prismThemes.github,

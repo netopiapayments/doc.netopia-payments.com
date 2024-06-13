@@ -7,7 +7,7 @@ title: Signup
 
 :::tip[Create your account]
 
-Head over to [https://netopia-payments.com/register-netopia](https://netopia-payments.com/register-netopia/#gdpr_content) and start the registration process for your Netopia Payments account.
+Head over to [https://netopia-payments.com/register-netopia](https://netopia-payments.com/register-netopia/#gdpr_content) and start the registration process for your NETOPIA Payments account.
 
 :::
 

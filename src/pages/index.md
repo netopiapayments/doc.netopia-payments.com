@@ -4,4 +4,4 @@ title: Home
 
 # Welcome
 
-Netopia Developer Portal. Start here: [Payment API](/docs/category/payment-api)
+NETOPIA Developer Portal. Start here: [Payment API](/docs/category/payment-api)
