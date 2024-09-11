@@ -1,0 +1,346 @@
+---
+sidebar_position: 1
+title: Documentation
+---
+
+**About This Guide**
+
+The API Developer Reference describes the NETOPIA API for generating NETOPIA purchases and understanding the NETOPIA API response
+
+**Intended Audience**
+
+[Version 2.x](/docs/payment-api/v2.x/intro) is the latest release of the NETOPIA Payments API and is recommended for both new and existing customers. This version uses JSON endpoints and is secured with API tokens. Version 1.x will be phased out and fully replaced by Version 2.x by the end of 2025. This documentation is provided to assist existing customers until they complete their migration to NETOPIA Payments API version 2.x.
+
+**Documentation Feedback**
+
+Help us improve this guide by sending feedback to: [implementare@netopia.ro](mailto:implementare@netopia.ro)
+
+**NETOPIA API Basics**
+
+NETOPIA offers a set of application programming interfaces (APIs) that give you the means to incorporate NETOPIA functionality into your website applications and mobile apps.
+
+This document describes how to make calls to NETOPIA API and how to interpret
+
+the instant payment notification (IPN) from Netopia.
+
+**NETOPIA API Client-Server Architecture**
+
+The NETOPIA API uses a client-server model in which your website is a client of the NETOPIA server.
+
+A page on your website initiates an action on a NETOPIA API server by sending a request to the server. This request will always be sent using the method POST to one of the payment URL (service endpoints) specified. The user needs to be redirected to NETOPIA’s payment page through a form on the merchant side. The NETOPIA server processes the credit card information presented by the cardholder and responds with an IPN to a callback URL previously specified in the request.
+
+**Security**
+
+The NETOPIA API service is protected to ensure that only authorized NETOPIA merchants use it. There are three levels of security:
+
+1\. Request authentication using an API Signature included in the request (Signature field)
+
+2\. The data exchanged between the client → NETOPIA server and back is encrypted using RSA keys
+
+3\. Secure Sockets Layer (SSL) data transport for the request, optional, if available
+
+on the merchant side, for the response.
+
+**Payment Request/Response Flow**
+--insert image schematic here--
+
+You will redirect the client to NETOPIA together with a payment request. This request will have two mandatory parameters and other two optional parameters:
+
+**env_key** – this is the envelope associated with the public key generated upon
+
+payment encryption
+
+**data** – this is the XML structure presented below, signed with the public certificate
+
+NETOPIA has provided. The certificate is available upon seller account creation in Points of sale - See the list of points of sale - Technical settings.
+
+**cipher** – is an algorithm or cipher used to encrypt or decrypt data
+
+**iv** – initialization vector, used to ensure that same value blocks will not turn into the same ciphertext blocks when encrypted with the same algorithm and key
+
+**Service Endpoints**
+
+You should always start the payment by using POST method for redirecting the client to one of these endpoints:
+
+- standard payment, live mode – [https://secure.mobilpay.ro](https://secure.mobilpay.ro)
+- one click payments, live mode – [https://secure.mobilpay.ro/card4](https://secure.mobilpay.ro/card4)
+- standard payment, test mode – [https://sandboxsecure.mobilpay.ro](https://sandboxsecure.mobilpay.ro)
+- one click payments, test mode – [https://sandboxsecure.mobilpay.ro/card4](http://sandboxsecure.mobilpay.ro/card4)
+
+If you want to display the payment interface in a different language, you should append the language identifier to the specific endpoint, i.e. [https://secure.mobilpay.ro/en](https://secure.mobilpay.ro/en) for English.
+
+## **_Payment Request Structure_**
+
+**The following annotated description of the XML request structure shows the elements required by the NETOPIA API.**
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;order type="card" id="string64" timestamp="YYYYmmddHHiiss"&gt;
+
+&lt;signature&gt;XXXX-XXXX-XXXX-XXXX-XXXX&lt;/signature&gt;
+
+&lt;invoice currency="RON" amount="XX.YY" installments=”R1,R2” selected_installments=”R2” customer_id=”internal_id” token_id=”token_identifier”&gt;
+
+&lt;details&gt;Payment Details&lt;/details&gt;
+
+&lt;contact_info&gt;
+
+&lt;billing type="company|person"&gt;
+
+&lt;first_name&gt;first_name&lt;/first_name&gt;
+
+&lt;last_name&gt;last_name&lt;/last_name&gt;
+
+&lt;email&gt;email_address&lt;/email&gt;
+
+&lt;address&gt;address&lt;/address&gt;
+
+&lt;mobile_phone&gt;mobile_phone&lt;/mobile_phone&gt;
+
+&lt;/billing&gt;
+
+&lt;/contact_info&gt;
+
+&lt;/invoice&gt;
+
+&lt;ipn_cipher&gt;aes-256-cbc&lt;/ipn_cipher&gt;
+
+&lt;params&gt;
+
+&lt;param&gt;
+
+&lt;name&gt;param1Name&lt;/name&gt;
+
+&lt;value&gt;param1Value&lt;/value&gt;
+
+&lt;/param&gt;
+
+&lt;/params&gt;
+
+&lt;url&gt;
+
+&lt;confirm&gt;http://www.your_website.com/confirm&lt;/confirm&gt;
+
+&lt;return&gt;http://www.your_website.com/return&lt;/return&gt;
+
+&lt;/url&gt;
+
+&lt;/order&gt;
+
+**Request Parameters**
+
+**order type** – states the type of transaction that is to be initiated. Must be card;
+
+**order id** – this is an internal identifier of your order. It should not have more than 64 characters (string) and should be unique for a seller account. Unless you specifically want to make a payment request for the same order, this attribute should be refreshed on each payment request. You will use this identifier when you receive the payment response;
+
+**timestamp**–this is the timestamp of your server formatted as YYYYMMDDhhmmss
+
+(i.e. 20240425020304 is 2024, April 25th, 02:03:04)
+
+**signature** – unique key assigned to your seller account for the payment process. Can be obtained from NETOPIA's merchant console and has to look like XXXX-XXXX-XXXX-XXXX;
+
+**invoice** – the details of the payment about to be initiated;
+
+**currency** – the currency in which the payment will be processed. Should be the ISO code of the currency (i.e. RON for Romanian Leu). You can also set a different currency (EUR, USD, GBP), but if NETOPIA's legal department hasn't cleared you for that currency, the amount will be converted to RON and displayed in dual currency, with RON first;
+
+**amount** – the amount to be processed. Card checks can be made with the amount of 0 and a maximum of 99999 units are allowed.
+
+**installments** – (optional) this is the installments number available for the payment.
+
+This is an integer and needs to be previously set in the platform by a NETOPIA representative;
+
+**selected_installments** – (optional) this is the number of installments that the client has selected on your web application. It should be an integer within the values specified in the installments attribute;
+
+**customer_id** – this is the internal identifier of your customer. It is recommended for one click payments, and should be unique.
+
+**token_id** – this is the token you have previously received from NETOPIA upon a first payment request. It helps identify the customer and the payment instrument;
+
+**pan_masked** – the first 6 and last 4 digits of the credit card associated with the token_id above. You may use this to present the client with the card he is about to use, in a friendly manner;
+
+**details** – the details of the payment as they will appear in the NETOPIA secure payment page; it is highly recommended that you only use alpha-numeric characters for this field;
+
+**cipher** – is an algorithm or method used to encrypt or decrypt data (you can use rc4 or aes-256-cbc);
+
+**contact_info** – information regarding the payer. The data here is optional, but if you provide it in the request, the customer will be presented with a more fluent payment experience, where the second step (asking for customer data) will no longer be present;
+
+**billing type** – the type of customer. It can be either person or company;
+
+**first_name** – the first name of the customer;
+
+**last_name** – the last name of the customer;
+
+**email** – email address of the customer;
+
+**mobile_phone** – phone number of the customer;
+
+**address** – address of the customer;
+
+**params** – you may send an array of custom parameters, with as much data as needed in order to have a large enough number of details regarding the payer and/or the product being paid for;
+
+**url** – this element specifies where NETOPIA will communicate the payment result
+
+**confirm** – a URL in your web application that will be called whenever the status of a payment changes or a manual IPN is being sent. It must be accessible via the Internet, on standard HTTP/S port (80 or, recommended 443). This is a transparent asynchronous call, however, the first call is always synchronous;
+
+**return** – a URL in your web application where the client will be redirected to once the payment is complete. Not to be confused with a success or cancel URL, the information displayed here is dynamic, based on the information previously sent to confirm URL.
+
+**Payment Response Structure**
+
+Upon every change in the status of a payment, NETOPIA will make a POST to the URL you have set as confirm, content-type: application/x-www-form-urlencoded, with the following parameters in the payload: env_key, data, cipher and, optional, iv. NETOPIA will encrypt a response XML in the same way you have done when making the payment request. Data will be encrypted using a X509 public certificate and you will use the private key provided by NETOPIA (or of your own) to decrypt it.
+
+You will receive all the parameters you have sent, unchanged, and NETOPIA will add another element, called **mobilpay,** to the response XML.
+
+The following annotated description of the XML response structure shows the elements sent by the NETOPIA API.
+
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;order type="card" id="string64" timestamp="YYYYMMDDHHMMSS"&gt;
+
+&lt;mobilpay timestamp="YYYYMMDDHHMMSS" crc="XXXXX"&gt;
+
+&lt;action&gt;action_type&lt;/action&gt;
+
+&lt;customer type="person|company"&gt;
+
+&lt;first_name&gt;first_name&lt;/first_name&gt;
+
+&lt;last_name&gt;last_name&lt;/last_name&gt;
+
+&lt;address&gt;address&lt;/address&gt;
+
+&lt;email&gt;email_address&lt;/email&gt;
+
+&lt;mobile_phone&gt;phone_no&lt;/mobile_phone&gt;
+
+&lt;/customer&gt;
+
+&lt;purchase&gt;mobilPay_purchase_no&lt;/purchase&gt;
+
+&lt;original_amount&gt;XX.XX&lt;/original_amount&gt;
+
+&lt;processed_amount&gt;NN.NN&lt;/processed_amount&gt;
+
+&lt;pan_masked&gt;XXXXXX\*\*\*\*YYYY&lt;/pan_masked&gt;
+
+&lt;payment_instrument_id&gt;ZZZZZZZ&lt;/payment_instrument_id&gt;
+
+&lt;token_id&gt;token_identifier&lt;/token_id&gt;
+
+&lt;token_expiration_date&gt;YYYY-MM-DD HH:MM:SS&lt;/token_expiration_date&gt;
+
+&lt;error code="N"&gt;error_message&lt;/error&gt;
+
+&lt;/mobilpay&gt;
+
+&lt;/order&gt;
+
+**Response Parameters**
+
+**mobilpay** – this is NETOPIA's response, appended to your unchanged request;
+
+**timestamp** – NETOPIA's internal timestamp, format YYYYMMDDHHSS;
+
+**crc** – NETOPIA internal identifier check;
+
+**action** – the action attempted by NETOPIA. Possible actions are “paid_pending, confirmed_pending, paid, confirmed, credit, canceled”. This is not the status of the transaction, as all actions can either fail or succeed;
+
+**customer type** – the type of paying customer. This is the data provided to NETOPIA by the customer. Can be either person or company.
+
+**first_name** – the customer's first name, as inserted in the payment page;
+
+**last_name** - the customer's first name, as inserted in the payment page;
+
+**address** – the customer's address, as inserted in the payment page;
+
+**email** – the customer's email address, as inserted in the payment page;
+
+**mobile_phone** – the customer's phone, as inserted in the payment page;
+
+**purchase** – NETOPIA internal identifier. This is unique for the entire NETOPIA platform;
+
+**original_amount** – the original amount processed;
+
+**processed_amount** – the processed amount at the moment of the response. It can be lower than the original amount, ie for capturing a smaller amount or for a partial credit;
+
+**pan_masked** – first 6 and last 4 digits of the card used. Store this and use it for presenting the customer with a friendly way of identifying the payment instrument;
+
+**payment_instrument_id** – this is an internal NETOPIA identifier of the payment instrument, and allows you to check for its uniqueness;
+
+**token_id** – this is the token associated with the payment instrument. You can use it to initiate recurring payments or one click;
+
+**token_expiration_date** – the expiration date of the token. It is usually set to the expiration date of the card;
+
+**error code** – the error code states whether the action has been successful or not. A 0 (zero) value states that the action has succeeded. A different value means it has not; (you will find the list of error code values below)
+
+**error message** – the error message associated to the error code. This is generally a message that can be presented to the user in order to help him understand why a transaction has been rejected, or if it has been approved.
+
+**Merchant's Response**
+
+For each call to your confirm URL, you will need to send a response in XML format back to NETOPIA, in order to help us understand whether you have successfully recorded the response or not. For debugging purposes, you may view your response in NETOPIA platform
+
+(go to [https://admin.netopia-payments.com/](https://admin.netopia-payments.com/) - Orders - Card, under status select "Any”, identify the transaction - Merchant communication.). The answer must be of the following form:
+
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+
+&lt;crc error_type=”1|2” error_code=”numeric”&gt;message&lt;/crc&gt;
+
+The attributes of the crc element are only sent if you had any problem recording the IPN, and have the following meaning:
+
+**error_type** – based on this NETOPIA will activate a resend IPN mechanism or not. If its value is 1, it means you encountered a temporary error. Set it to 2 if you encountered a permanent error;
+
+**error_code** – this is your internal error code, helping you to view the error
+
+generated by your web application;
+
+**message** – if you encountered an error while processing the IPN, this should be your error message, helping you find the error. If no error occurred, it is recommended that you set this to the **crc** value received in the IPN or something else that you may find suitable
+
+**Error Code Values**
+
+0 – approved
+
+16 – card has a risk (i.e. stolen card)
+
+17 – card number is incorrect
+
+18 – closed card
+
+19 – card is expired
+
+20 – insufficient funds
+
+21 – cVV2 code incorrect
+
+22 – issuer is unavailable
+
+32 – amount is incorrect
+
+33 – currency is incorrect
+
+34 – transaction not permitted to cardholder
+
+35 – transaction declined
+
+36 – transaction rejected by antifraud filters
+
+37 – transaction declined (breaking the law)
+
+38 – Requires 3D Authentication
+
+48 – invalid request
+
+49 – duplicate PREAUTH
+
+50 – duplicate AUTH
+
+51 – you can only CANCEL a preauth order
+
+52 – you can only CONFIRM a preauth order
+
+53 – you can only CREDIT a confirmed order
+
+54 – credit amount is higher than auth amount
+
+55 – capture amount is higher than preauth amount
+
+56 – duplicate request (This means that the payment has already been completed, so it must be confirmed with the merchant (if it is not already) or ignored (if it is already confirmed with the merchant).
+
+99 – generic error

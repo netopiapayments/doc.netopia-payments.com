@@ -6,12 +6,6 @@ sidebar_position: 1
 
 The **Payments API**  was designed and implemented by NETOPIA Payments development team to be used in third party applications to cover the payment process.
 
-## Why NETOPIA Payments API
--   Fast and Secure
--   Full support for 3DSecure authentication
--   Easy to integrate with any third party application 
--   Stellar support
-
 ## Prerequisites
 
 You should have a merchant account with NETOPIA. If you dont yet have one, start by **[creating it](https://netopia-payments.com/register/)**.
@@ -47,5 +41,5 @@ https://secure.sandbox.netopia-payments.com/spec
 ```
 
 ## API Reference
--   NETOPIA Payments API **Version 1** 
+-   NETOPIA Payments API **Version 2** 
 -   Release at **2021**
