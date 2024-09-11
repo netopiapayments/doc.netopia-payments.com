@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-payment-api/v1.x/intro" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">Documentation | NETOPIA Development Portal</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.netopia-payments.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.netopia-payments.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.netopia-payments.com/docs/payment-api/v1.x/intro"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Documentation | NETOPIA Development Portal"><meta data-rh="true" name="description" content="About This Guide"><meta data-rh="true" property="og:description" content="About This Guide"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.netopia-payments.com/docs/payment-api/v1.x/intro"><link data-rh="true" rel="alternate" href="https://docs.netopia-payments.com/docs/payment-api/v1.x/intro" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.netopia-payments.com/docs/payment-api/v1.x/intro" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="NETOPIA Development Portal RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="NETOPIA Development Portal Atom Feed"><link rel="stylesheet" href="/assets/css/styles.eeffb9b0.css">
+<script src="/assets/js/runtime~main.c9e17363.js" defer="defer"></script>
+<script src="/assets/js/main.ec47f3dc.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="NETOPIA Developer Portal" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="NETOPIA Developer Portal" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">NETOPIA Developer Portal</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/get-started">Documentation</a><a class="navbar__item navbar__link" href="/blog">News</a></div><div class="navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/get-started">Getting Started</a><button aria-label="Expand sidebar category &#x27;Getting Started&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/payment-api">Payment API</a><button aria-label="Collapse sidebar category &#x27;Payment API&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/payment-api/v2.x/intro">Version 2.x</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/payment-api/v1.x/intro">Version 1.x</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/payment-api/v1.x/intro">Documentation</a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/payment-plugins/wordpress">Payment Plugins</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/payment-sdks/php">Payment SDKs</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/web2sms/intro">Web2SMS</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/payment-api"><span itemprop="name">Payment API</span></a><meta itemprop="position" content="1"></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Version 1.x</span><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Documentation</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Documentation</h1></header><p><strong>About This Guide</strong></p>
+<p>The API Developer Reference describes the NETOPIA API for generating NETOPIA purchases and understanding the NETOPIA API response</p>
+<p><strong>Intended Audience</strong></p>
+<p><a href="/docs/payment-api/v2.x/intro">Version 2.x</a> is the latest release of the NETOPIA Payments API and is recommended for both new and existing customers. This version uses JSON endpoints and is secured with API tokens. Version 1.x will be phased out and fully replaced by Version 2.x by the end of 2025. This documentation is provided to assist existing customers until they complete their migration to NETOPIA Payments API version 2.x.</p>
+<p><strong>Documentation Feedback</strong></p>
+<p>Help us improve this guide by sending feedback to: <a href="mailto:implementare@netopia.ro" target="_blank" rel="noopener noreferrer">implementare@netopia.ro</a></p>
+<p><strong>NETOPIA API Basics</strong></p>
+<p>NETOPIA offers a set of application programming interfaces (APIs) that give you the means to incorporate NETOPIA functionality into your website applications and mobile apps.</p>
+<p>This document describes how to make calls to NETOPIA API and how to interpret</p>
+<p>the instant payment notification (IPN) from Netopia.</p>
+<p><strong>NETOPIA API Client-Server Architecture</strong></p>
+<p>The NETOPIA API uses a client-server model in which your website is a client of the NETOPIA server.</p>
+<p>A page on your website initiates an action on a NETOPIA API server by sending a request to the server. This request will always be sent using the method POST to one of the payment URL (service endpoints) specified. The user needs to be redirected to NETOPIA’s payment page through a form on the merchant side. The NETOPIA server processes the credit card information presented by the cardholder and responds with an IPN to a callback URL previously specified in the request.</p>
+<p><strong>Security</strong></p>
+<p>The NETOPIA API service is protected to ensure that only authorized NETOPIA merchants use it. There are three levels of security:</p>
+<p>1. Request authentication using an API Signature included in the request (Signature field)</p>
+<p>2. The data exchanged between the client → NETOPIA server and back is encrypted using RSA keys</p>
+<p>3. Secure Sockets Layer (SSL) data transport for the request, optional, if available</p>
+<p>on the merchant side, for the response.</p>
+<p><strong>Payment Request/Response Flow</strong>
+--insert image schematic here--</p>
+<p>You will redirect the client to NETOPIA together with a payment request. This request will have two mandatory parameters and other two optional parameters:</p>
+<p><strong>env_key</strong> – this is the envelope associated with the public key generated upon</p>
+<p>payment encryption</p>
+<p><strong>data</strong> – this is the XML structure presented below, signed with the public certificate</p>
+<p>NETOPIA has provided. The certificate is available upon seller account creation in Points of sale - See the list of points of sale - Technical settings.</p>
+<p><strong>cipher</strong> – is an algorithm or cipher used to encrypt or decrypt data</p>
+<p><strong>iv</strong> – initialization vector, used to ensure that same value blocks will not turn into the same ciphertext blocks when encrypted with the same algorithm and key</p>
+<p><strong>Service Endpoints</strong></p>
+<p>You should always start the payment by using POST method for redirecting the client to one of these endpoints:</p>
+<ul>
+<li>standard payment, live mode – <a href="https://secure.mobilpay.ro" target="_blank" rel="noopener noreferrer">https://secure.mobilpay.ro</a></li>
+<li>one click payments, live mode – <a href="https://secure.mobilpay.ro/card4" target="_blank" rel="noopener noreferrer">https://secure.mobilpay.ro/card4</a></li>
+<li>standard payment, test mode – <a href="https://sandboxsecure.mobilpay.ro" target="_blank" rel="noopener noreferrer">https://sandboxsecure.mobilpay.ro</a></li>
+<li>one click payments, test mode – <a href="http://sandboxsecure.mobilpay.ro/card4" target="_blank" rel="noopener noreferrer">https://sandboxsecure.mobilpay.ro/card4</a></li>
+</ul>
+<p>If you want to display the payment interface in a different language, you should append the language identifier to the specific endpoint, i.e. <a href="https://secure.mobilpay.ro/en" target="_blank" rel="noopener noreferrer">https://secure.mobilpay.ro/en</a> for English.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="payment-request-structure"><strong><em>Payment Request Structure</em></strong><a href="#payment-request-structure" class="hash-link" aria-label="Direct link to payment-request-structure" title="Direct link to payment-request-structure">​</a></h2>
+<p><strong>The following annotated description of the XML request structure shows the elements required by the NETOPIA API.</strong></p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</p>
+<p>&lt;order type=&quot;card&quot; id=&quot;string64&quot; timestamp=&quot;YYYYmmddHHiiss&quot;&gt;</p>
+<p>&lt;signature&gt;XXXX-XXXX-XXXX-XXXX-XXXX&lt;/signature&gt;</p>
+<p>&lt;invoice currency=&quot;RON&quot; amount=&quot;XX.YY&quot; installments=”R1,R2” selected_installments=”R2” customer_id=”internal_id” token_id=”token_identifier”&gt;</p>
+<p>&lt;details&gt;Payment Details&lt;/details&gt;</p>
+<p>&lt;contact_info&gt;</p>
+<p>&lt;billing type=&quot;company|person&quot;&gt;</p>
+<p>&lt;first_name&gt;first_name&lt;/first_name&gt;</p>
+<p>&lt;last_name&gt;last_name&lt;/last_name&gt;</p>
+<p>&lt;email&gt;email_address&lt;/email&gt;</p>
+<p>&lt;address&gt;address&lt;/address&gt;</p>
+<p>&lt;mobile_phone&gt;mobile_phone&lt;/mobile_phone&gt;</p>
+<p>&lt;/billing&gt;</p>
+<p>&lt;/contact_info&gt;</p>
+<p>&lt;/invoice&gt;</p>
+<p>&lt;ipn_cipher&gt;aes-256-cbc&lt;/ipn_cipher&gt;</p>
+<p>&lt;params&gt;</p>
+<p>&lt;param&gt;</p>
+<p>&lt;name&gt;param1Name&lt;/name&gt;</p>
+<p>&lt;value&gt;param1Value&lt;/value&gt;</p>
+<p>&lt;/param&gt;</p>
+<p>&lt;/params&gt;</p>
+<p>&lt;url&gt;</p>
+<p>&lt;confirm&gt;http://www.your_website.com/confirm&lt;/confirm&gt;</p>
+<p>&lt;return&gt;http://www.your_website.com/return&lt;/return&gt;</p>
+<p>&lt;/url&gt;</p>
+<p>&lt;/order&gt;</p>
+<p><strong>Request Parameters</strong></p>
+<p><strong>order type</strong> – states the type of transaction that is to be initiated. Must be card;</p>
+<p><strong>order id</strong> – this is an internal identifier of your order. It should not have more than 64 characters (string) and should be unique for a seller account. Unless you specifically want to make a payment request for the same order, this attribute should be refreshed on each payment request. You will use this identifier when you receive the payment response;</p>
+<p><strong>timestamp</strong>–this is the timestamp of your server formatted as YYYYMMDDhhmmss</p>
+<p>(i.e. 20240425020304 is 2024, April 25th, 02:03:04)</p>
+<p><strong>signature</strong> – unique key assigned to your seller account for the payment process. Can be obtained from NETOPIA&#x27;s merchant console and has to look like XXXX-XXXX-XXXX-XXXX;</p>
+<p><strong>invoice</strong> – the details of the payment about to be initiated;</p>
+<p><strong>currency</strong> – the currency in which the payment will be processed. Should be the ISO code of the currency (i.e. RON for Romanian Leu). You can also set a different currency (EUR, USD, GBP), but if NETOPIA&#x27;s legal department hasn&#x27;t cleared you for that currency, the amount will be converted to RON and displayed in dual currency, with RON first;</p>
+<p><strong>amount</strong> – the amount to be processed. Card checks can be made with the amount of 0 and a maximum of 99999 units are allowed.</p>
+<p><strong>installments</strong> – (optional) this is the installments number available for the payment.</p>
+<p>This is an integer and needs to be previously set in the platform by a NETOPIA representative;</p>
+<p><strong>selected_installments</strong> – (optional) this is the number of installments that the client has selected on your web application. It should be an integer within the values specified in the installments attribute;</p>
+<p><strong>customer_id</strong> – this is the internal identifier of your customer. It is recommended for one click payments, and should be unique.</p>
+<p><strong>token_id</strong> – this is the token you have previously received from NETOPIA upon a first payment request. It helps identify the customer and the payment instrument;</p>
+<p><strong>pan_masked</strong> – the first 6 and last 4 digits of the credit card associated with the token_id above. You may use this to present the client with the card he is about to use, in a friendly manner;</p>
+<p><strong>details</strong> – the details of the payment as they will appear in the NETOPIA secure payment page; it is highly recommended that you only use alpha-numeric characters for this field;</p>
+<p><strong>cipher</strong> – is an algorithm or method used to encrypt or decrypt data (you can use rc4 or aes-256-cbc);</p>
+<p><strong>contact_info</strong> – information regarding the payer. The data here is optional, but if you provide it in the request, the customer will be presented with a more fluent payment experience, where the second step (asking for customer data) will no longer be present;</p>
+<p><strong>billing type</strong> – the type of customer. It can be either person or company;</p>
+<p><strong>first_name</strong> – the first name of the customer;</p>
+<p><strong>last_name</strong> – the last name of the customer;</p>
+<p><strong>email</strong> – email address of the customer;</p>
+<p><strong>mobile_phone</strong> – phone number of the customer;</p>
+<p><strong>address</strong> – address of the customer;</p>
+<p><strong>params</strong> – you may send an array of custom parameters, with as much data as needed in order to have a large enough number of details regarding the payer and/or the product being paid for;</p>
+<p><strong>url</strong> – this element specifies where NETOPIA will communicate the payment result</p>
+<p><strong>confirm</strong> – a URL in your web application that will be called whenever the status of a payment changes or a manual IPN is being sent. It must be accessible via the Internet, on standard HTTP/S port (80 or, recommended 443). This is a transparent asynchronous call, however, the first call is always synchronous;</p>
+<p><strong>return</strong> – a URL in your web application where the client will be redirected to once the payment is complete. Not to be confused with a success or cancel URL, the information displayed here is dynamic, based on the information previously sent to confirm URL.</p>
+<p><strong>Payment Response Structure</strong></p>
+<p>Upon every change in the status of a payment, NETOPIA will make a POST to the URL you have set as confirm, content-type: application/x-www-form-urlencoded, with the following parameters in the payload: env_key, data, cipher and, optional, iv. NETOPIA will encrypt a response XML in the same way you have done when making the payment request. Data will be encrypted using a X509 public certificate and you will use the private key provided by NETOPIA (or of your own) to decrypt it.</p>
+<p>You will receive all the parameters you have sent, unchanged, and NETOPIA will add another element, called <strong>mobilpay,</strong> to the response XML.</p>
+<p>The following annotated description of the XML response structure shows the elements sent by the NETOPIA API.</p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</p>
+<p>&lt;order type=&quot;card&quot; id=&quot;string64&quot; timestamp=&quot;YYYYMMDDHHMMSS&quot;&gt;</p>
+<p>&lt;mobilpay timestamp=&quot;YYYYMMDDHHMMSS&quot; crc=&quot;XXXXX&quot;&gt;</p>
+<p>&lt;action&gt;action_type&lt;/action&gt;</p>
+<p>&lt;customer type=&quot;person|company&quot;&gt;</p>
+<p>&lt;first_name&gt;first_name&lt;/first_name&gt;</p>
+<p>&lt;last_name&gt;last_name&lt;/last_name&gt;</p>
+<p>&lt;address&gt;address&lt;/address&gt;</p>
+<p>&lt;email&gt;email_address&lt;/email&gt;</p>
+<p>&lt;mobile_phone&gt;phone_no&lt;/mobile_phone&gt;</p>
+<p>&lt;/customer&gt;</p>
+<p>&lt;purchase&gt;mobilPay_purchase_no&lt;/purchase&gt;</p>
+<p>&lt;original_amount&gt;XX.XX&lt;/original_amount&gt;</p>
+<p>&lt;processed_amount&gt;NN.NN&lt;/processed_amount&gt;</p>
+<p>&lt;pan_masked&gt;XXXXXX****YYYY&lt;/pan_masked&gt;</p>
+<p>&lt;payment_instrument_id&gt;ZZZZZZZ&lt;/payment_instrument_id&gt;</p>
+<p>&lt;token_id&gt;token_identifier&lt;/token_id&gt;</p>
+<p>&lt;token_expiration_date&gt;YYYY-MM-DD HH:MM<!-- -->:SS<!-- -->&lt;/token_expiration_date&gt;</p>
+<p>&lt;error code=&quot;N&quot;&gt;error_message&lt;/error&gt;</p>
+<p>&lt;/mobilpay&gt;</p>
+<p>&lt;/order&gt;</p>
+<p><strong>Response Parameters</strong></p>
+<p><strong>mobilpay</strong> – this is NETOPIA&#x27;s response, appended to your unchanged request;</p>
+<p><strong>timestamp</strong> – NETOPIA&#x27;s internal timestamp, format YYYYMMDDHHSS;</p>
+<p><strong>crc</strong> – NETOPIA internal identifier check;</p>
+<p><strong>action</strong> – the action attempted by NETOPIA. Possible actions are “paid_pending, confirmed_pending, paid, confirmed, credit, canceled”. This is not the status of the transaction, as all actions can either fail or succeed;</p>
+<p><strong>customer type</strong> – the type of paying customer. This is the data provided to NETOPIA by the customer. Can be either person or company.</p>
+<p><strong>first_name</strong> – the customer&#x27;s first name, as inserted in the payment page;</p>
+<p><strong>last_name</strong> - the customer&#x27;s first name, as inserted in the payment page;</p>
+<p><strong>address</strong> – the customer&#x27;s address, as inserted in the payment page;</p>
+<p><strong>email</strong> – the customer&#x27;s email address, as inserted in the payment page;</p>
+<p><strong>mobile_phone</strong> – the customer&#x27;s phone, as inserted in the payment page;</p>
+<p><strong>purchase</strong> – NETOPIA internal identifier. This is unique for the entire NETOPIA platform;</p>
+<p><strong>original_amount</strong> – the original amount processed;</p>
+<p><strong>processed_amount</strong> – the processed amount at the moment of the response. It can be lower than the original amount, ie for capturing a smaller amount or for a partial credit;</p>
+<p><strong>pan_masked</strong> – first 6 and last 4 digits of the card used. Store this and use it for presenting the customer with a friendly way of identifying the payment instrument;</p>
+<p><strong>payment_instrument_id</strong> – this is an internal NETOPIA identifier of the payment instrument, and allows you to check for its uniqueness;</p>
+<p><strong>token_id</strong> – this is the token associated with the payment instrument. You can use it to initiate recurring payments or one click;</p>
+<p><strong>token_expiration_date</strong> – the expiration date of the token. It is usually set to the expiration date of the card;</p>
+<p><strong>error code</strong> – the error code states whether the action has been successful or not. A 0 (zero) value states that the action has succeeded. A different value means it has not; (you will find the list of error code values below)</p>
+<p><strong>error message</strong> – the error message associated to the error code. This is generally a message that can be presented to the user in order to help him understand why a transaction has been rejected, or if it has been approved.</p>
+<p><strong>Merchant&#x27;s Response</strong></p>
+<p>For each call to your confirm URL, you will need to send a response in XML format back to NETOPIA, in order to help us understand whether you have successfully recorded the response or not. For debugging purposes, you may view your response in NETOPIA platform</p>
+<p>(go to <a href="https://admin.netopia-payments.com/" target="_blank" rel="noopener noreferrer">https://admin.netopia-payments.com/</a> - Orders - Card, under status select &quot;Any”, identify the transaction - Merchant communication.). The answer must be of the following form:</p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;</p>
+<p>&lt;crc error_type=”1|2” error_code=”numeric”&gt;message&lt;/crc&gt;</p>
+<p>The attributes of the crc element are only sent if you had any problem recording the IPN, and have the following meaning:</p>
+<p><strong>error_type</strong> – based on this NETOPIA will activate a resend IPN mechanism or not. If its value is 1, it means you encountered a temporary error. Set it to 2 if you encountered a permanent error;</p>
+<p><strong>error_code</strong> – this is your internal error code, helping you to view the error</p>
+<p>generated by your web application;</p>
+<p><strong>message</strong> – if you encountered an error while processing the IPN, this should be your error message, helping you find the error. If no error occurred, it is recommended that you set this to the <strong>crc</strong> value received in the IPN or something else that you may find suitable</p>
+<p><strong>Error Code Values</strong></p>
+<p>0 – approved</p>
+<p>16 – card has a risk (i.e. stolen card)</p>
+<p>17 – card number is incorrect</p>
+<p>18 – closed card</p>
+<p>19 – card is expired</p>
+<p>20 – insufficient funds</p>
+<p>21 – cVV2 code incorrect</p>
+<p>22 – issuer is unavailable</p>
+<p>32 – amount is incorrect</p>
+<p>33 – currency is incorrect</p>
+<p>34 – transaction not permitted to cardholder</p>
+<p>35 – transaction declined</p>
+<p>36 – transaction rejected by antifraud filters</p>
+<p>37 – transaction declined (breaking the law)</p>
+<p>38 – Requires 3D Authentication</p>
+<p>48 – invalid request</p>
+<p>49 – duplicate PREAUTH</p>
+<p>50 – duplicate AUTH</p>
+<p>51 – you can only CANCEL a preauth order</p>
+<p>52 – you can only CONFIRM a preauth order</p>
+<p>53 – you can only CREDIT a confirmed order</p>
+<p>54 – credit amount is higher than auth amount</p>
+<p>55 – capture amount is higher than preauth amount</p>
+<p>56 – duplicate request (This means that the payment has already been completed, so it must be confirmed with the merchant (if it is not already) or ignored (if it is already confirmed with the merchant).</p>
+<p>99 – generic error</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/payment-api/v2"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">index</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/payment-plugins/wordpress"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Wordpress Plugin</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#payment-request-structure" class="table-of-contents__link toc-highlight"><strong><em>Payment Request Structure</em></strong></a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">NETOPIA services</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://netopia-payments.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">NETOPIA Payments</a></li><li class="footer__item"><a href="https://web2sms.ro" target="_blank" rel="noopener noreferrer" class="footer__link-item">Web2sms</a></li><li class="footer__item"><a href="https://netopia-payments.com/servicii/mobilpay-wallet-plata-cu-mobilul/" target="_blank" rel="noopener noreferrer" class="footer__link-item">mobilPay Wallet</a></li></ul></div><div class="col footer__col"><div class="footer__title">Social Media</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.facebook.com/NETOPIAPayments/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/@netopiagroup" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/netopia-system/" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 NETOPIA Payments.</div></div></div></footer></div>
+</body>
+</html>

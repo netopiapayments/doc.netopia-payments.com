@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportal=self.webpackChunkportal||[]).push([[8947],{6600:e=>{e.exports=JSON.parse('{"authors":[{"name":"Netopia","title":"Development Team","url":"https://github.com/netopiapayments","imageURL":"https://github.com/netopiapayments.png","key":"netopia","page":null,"count":1}]}')}}]);
