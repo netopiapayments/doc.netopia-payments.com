@@ -15,7 +15,6 @@ const sidebars = {
         'get-started/kyc',
         'get-started/point-of-sale',
         'get-started/technical-implementation',
-        'get-started/api-usage',
       ],
     },
     {
