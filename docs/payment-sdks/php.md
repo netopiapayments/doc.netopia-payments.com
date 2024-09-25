@@ -6,6 +6,8 @@ title: PHP SDK
 # Composer PHP
 
 ## NETOPIA Payments Composer
+PHP Module: [https://github.com/mobilpay/PHP_CARD](https://github.com/mobilpay/PHP_CARD)
+Composer: [https://github.com/mobilpay/composer](https://github.com/mobilpay/composer)
 
 ### Installation
 Run the following command from root of your project 

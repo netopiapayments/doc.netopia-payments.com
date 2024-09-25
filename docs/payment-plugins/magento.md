@@ -4,7 +4,7 @@ title: Magento Plugin
 ---
 
 # NETOPIA Payments module for Magento 2.4.X
-###### (for previous versions using the other branches of this GitHub repository)
+###### (for previous versions using the other branches of [this GitHub repository](https://github.com/mobilpay/Magento))
 
 ## Options
 * Card payment

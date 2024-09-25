@@ -8,7 +8,7 @@ Proof of concept - NETOPIA integration in Node.js
 
 ## Card Payment Module in nodejs
 
-This module made to use as an example of implementation for online payment via Card
+[This module](https://github.com/mobilpay/Node.js) made to use as an example of implementation for online payment via Card
 
 ## Where to send the Request
 

@@ -6,6 +6,8 @@ sidebar_position: 1
 
 The **Payments API**  was designed and implemented by NETOPIA Payments development team to be used in third party applications to cover the payment process.
 
+[https://netopia-system.stoplight.io/docs/payments-api/6530c434c2f93-netopia-payments-merchant-api](https://netopia-system.stoplight.io/docs/payments-api/6530c434c2f93-netopia-payments-merchant-api)
+
 ## Prerequisites
 
 You should have a merchant account with NETOPIA. If you dont yet have one, start by **[creating it](https://netopia-payments.com/register/)**.
