@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-title: Point of Sale
+title: Points of Sale
 ---
 
-# Point of Sale
+# Points of Sale
 
 :::tip[Points of sale]
 
@@ -11,20 +11,70 @@ A point of sale is a web app - we support many programming languages: PHP, Java,
 
 :::
 
-#### Point of Sale activation checklist
+## Setting up a Point of Sale
 
-- Create the point of sale and fill in the name, url and the business category
-- Complete the point of sale verification. Make sure that the point of sale checks all the requirements presented in the beginning of the registration process:
-    - Descrierea clară și completă a bunurilor și serviciilor
-    - Afișarea clară a prețurilor și moneda de tranzacționare
-    - Datele de contact, complete, ale companiei (nume, CUI, adresă, telefon, e-mail)
-    - Domeniul de activitate nu face parte din categoria de risc
-    - Termeni și condiții
-    - Politica de confidențialitate
-    - Politica de livrare comandă
-    - Politica de anulare comandă
-    - Politica GDPR (siguranța datelor cu caracter personal)
-    - Certificat securitate (SSL)
-- Complete the technical implementation, depending on the point of sale type. Use the documentation in the Technical Implementation category.
-    - TODO: links to the technical implementation details
-- Request the technical implementation verification. If everything checks out, your point of sale will be ready to accept incoming payments. Our technical support team will help you identify any issues that may block the technical implementation.
+#### 1. In the Netopia admin dashboard [https://admin.netopia-payments.com/](https://admin.netopia-payments.com/), go to "Puncte de vanzare" in the left menu, then click on the "ADAUGA" button from the top right
+
+![Step one](../../static/img/wordpress/wordpress-plugin-1.png)
+
+#### 2. Select your platform
+
+![Step two](../../static/img/pointsofsale/points-of-sale-1.png)
+
+You can find all the major ecommerce platforms and SDKs (PHP, Node.js, Python, etc.) under the first box "Adauga Punct de Vanzare"
+
+![Step two](../../static/img/pointsofsale/points-of-sale-2.png)
+
+Below is the complete list of integrations available:
+
+| Vendor    |               |               |               |               |
+| :---      | :---          | :---          | :---          | :---          |
+| Wordpress | PrestaShop    | Magento       | OpenCart      | PHP           |
+| Composer  | Node.js       | Python        | Java          | Ruby on Rails |
+| Shopify   | FGO           | Smartbill     | MerchantPro   | ContentSpeed  |
+| GoMag     | Webecom       | Teamshare     | Oblio         | Saga          |
+| iApp      | Ovelt         | 24Broker      | Facturis      | ContApp       |
+| CRM amc   | Quick Sell    | Pynbooking    | BookOnlineNow | Cartum        |
+| MEFI      | BOCP Cloudbill| Link2Pay      |               |               |
+
+#### 3. Complete the fields with the following informations:
+
+- Name of the Point of Sale (this name will be used only for the internal reports)
+- URL of the Point of Sale
+- Industry of business
+
+After filling in the fields, press the button "ADAUGA"
+
+![Step four](../../static/img/wordpress/wordpress-plugin-4.png)
+
+#### 4. The next step is to request validation for your Point of Sale, by pressing the "SOLICITA APROBARE" button.
+
+We will return to cover the other information from this window later on.
+
+![Step five](../../static/img/wordpress/wordpress-plugin-5.png)
+
+#### 5. To validate your Point of Sale, the following points are necessary:
+
+- You must meet the listed mandatory conditions
+- Add the Netopia logos on the website
+- Comply with ANPC regulations regarding consumer information on alternative dispute resolution
+- Upload the loan agreement, invoice, or any other official document proving that the website domain is owned by your company
+
+At the end, press the "TRIMITE DATELE SPRE VALIDARE" button and wait for our reply
+
+![Step six](../../static/img/wordpress/wordpress-plugin-6.png)
+
+These are the mandatory conditions required for validation:
+
+- Clear and complete description of goods and services
+- Clear display of prices and the transaction currency
+- Complete contact details of the company (name, VAT number, address, phone, email)
+- The business activity is not part of a high-risk category
+- Terms and conditions
+- Privacy policy
+- Order delivery policy
+- Order cancellation policy
+- GDPR policy (personal data protection)
+- Security certificate (SSL)
+
+Our technical support team will help you identify and solve any technical issues that may be blocking your validation.
