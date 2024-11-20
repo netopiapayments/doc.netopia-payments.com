@@ -5,9 +5,23 @@ title: Wordpress Plugin
 
 # Wordpress Plugin
 
-## Setting up
+To set up the wordpress plugin, follow these three steps:
 
-#### 1. You need a Point of Sale before you can configure a payment gateway. If you don't have one yet, please first follow the [Points of Sale](/docs/get-started/03-point-of-sale.md) instructions and return here once you have a validated Point of Sale.
+#### 1. Ensure that you have already set up a point of sale configured specifically for WordPress 
+Make sure you have already [created a Point of Sale](/docs/get-started/03-point-of-sale.md). Check out the Point of Sale signature and encryption keys, which are essential for the technical implementation.
+
+#### 2. Install and activate the Netopia Payments WooCommerce Payment Gateway plugin
+Install our payments plugin from Wordpress repository and activate it.
+
+#### 3. Configure the plugin and validate the technical implementation
+Configure the plugin by setting the Point of Sale signature and the associated keys. Once the integration is complete, email implementare@netopia.ro to request final validation. Our technical support team will activate your point of sale, enabling you to start receiving payments.
+
+---
+Let's detail those steps one by one:
+
+
+
+### 1. You need a Point of Sale before you can configure a payment gateway. If you don't have one yet, please first follow the [Points of Sale](/docs/get-started/03-point-of-sale.md) instructions and return here once you have a validated Point of Sale.
 
 #### 2. In the WordPress dashboard, go to the "Plugins" page in the left menu and search for "netopia" in the search box.
 Then, click on the "Install Now" button for the NETOPIA Payments WooCommerce Payment Gateway plugin.
