@@ -9,20 +9,25 @@ title: Points of Sale
 A point of sale is a web app or an online shop - on the tech side we support many programming languages (PHP, Java, Python, Ruby, Javascript) and a wide range of ecommerce platforms (WordPress, Magento, OpenCart, PrestaShop).
 :::
 
-### Setting up a Point of Sale
+## Setting up
 
 To set up a fully operational point of sale, follow these three steps:
 
-#### 1. Create the Point of Sale
-Define the details such as the name, URL, and platform. Obtain the point of sale signature and encryption keys, which are essential for the technical implementation.
+### Step 1 - Create the Point of Sale
+Create a new Point of Sale in the [Netopia Admin Dashboard](https://admin.netopia-payments.com). Define the details such as name, URL, and platform. Once created, you can obtain the signature and encryption keys, which are essential for the technical implementation.
 
-#### 2. Integrate the Payment Feature on Your E-commerce Platform
-Use the provided documentation tailored to your chosen e-commerce platform. For custom web apps, you can integrate the payment feature using our SDKs.
+### Step 2 - Integrate the Netopia payment solution
 
-#### 3. Request Validation of the Technical Implementation
-Once the integration is complete, email implementare@netopia.ro to request final validation. Our technical support team will activate your point of sale, enabling you to start receiving payments.
+Use the provided documentation tailored to your chosen e-commerce platform. For custom web apps, you can integrate the payment solution using our SDKs.
+
+### Step 3 - Request validation of the technical implementation
+
+Once the integration is complete, email implementare@netopia.ro to request the final validation. Our technical support team will activate your Point of Sale, enabling you to start receiving payments.
 
 ---
+
+## Detailed instructions
+
 Let's detail those steps one by one:
 
 ### Step 1 - Create the point of sale
@@ -35,13 +40,13 @@ Select your e-commerce platform. The first option is suitable for web apps or ty
 
 ![Step two](../../static/img/pointsofsale/points-of-sale-1.png)
 
-Next, you can find all the major ecommerce platforms and SDKs (PHP, Node.js, Python, etc.)
+Here you can find all the major ecommerce platforms and SDKs (PHP, Node.js, Python, etc.)
 
 ![Step two](../../static/img/pointsofsale/points-of-sale-2.png)
 
 Below is the complete list of integrations available:
 
-Wordpress, PrestaShop, Magento, OpenCart, PHP, Composer, Node.js, Python, Java, Ruby on Rails, Shopify, FGO, Smartbill, MerchantPro, ContentSpeed, GoMag, Webecom, Teamshare, Oblio, Saga, iApp, Ovelt, 24Broker, Facturis, ContApp, CRM amc, Quick Sell, Pynbooking, BookOnlineNow, Cartum, MEFI, BOCP Cloudbill, Link2Pay
+- Wordpress, PrestaShop, Magento, OpenCart, PHP, Composer, Node.js, Python, Java, Ruby on Rails, Shopify, FGO, Smartbill, MerchantPro, ContentSpeed, GoMag, Webecom, Teamshare, Oblio, Saga, iApp, Ovelt, 24Broker, Facturis, ContApp, CRM amc, Quick Sell, Pynbooking, BookOnlineNow, Cartum, MEFI, BOCP Cloudbill, Link2Pay
 
 
 Define your point of sale by filling in the fields with the following information:
@@ -52,17 +57,17 @@ Define your point of sale by filling in the fields with the following informatio
 
 ![Step four](../../static/img/wordpress/wordpress-plugin-4.png)
 
-### Step 2 - Implement the payment feature on the ecommerce platform
+### Step 2 - Implement the Netopia payment solution
 
-The next step is to begin the implementation of the payment feature into your e-commerce platform. You will use our sandbox environment for all the tests.
+The next step is to begin the implementation of the payment solution into your e-commerce platform. You can use our sandbox environment for all the tests.
 
-If you already use a shopping cart platform, choose the appropriate documentation page from the following:
+You can find the specific documentation for all the supported platforms below:
 - [Wordpress](/docs/payment-plugins/wordpress)
 - [Prestashop](/docs/payment-plugins/prestashop)
 - [Magento](/docs/payment-plugins/magento)
 - [Opencart](/docs/payment-plugins/opencart)
 
-If you don't use a shopping cart platform, and you develop you custom online store, head over to the [Payment SDKs](/docs/payment-sdks) page, or directly to the documentation page related to your web framework:
+If you aren't using any of the platforms above and are developing your own custom online store, head over to the [Payment SDKs](/docs/payment-sdks) page, or directly to the documentation page related to the language you are using:
 - [PHP](/docs/payment-sdks/php)
 - [Node JS](/docs/payment-sdks/nodejs)
 - [Python](/docs/payment-sdks/python)
@@ -71,11 +76,9 @@ If you don't use a shopping cart platform, and you develop you custom online sto
 
 If none of those apply to your online store, please [contact us](mailto:implementare@netopia.ro) and we'll redirect you to an appropriate documentation.
 
-![Step five](../../static/img/wordpress/wordpress-plugin-5.png)
+### Step 3 - Request validation of the technical implementation
 
-### Step 3 - Request the validation for the technical implementation
-
-For your final validation of the Point of Sale, the following checklist needs to be filled in:
+For your final Point of Sale validation, the following checklist needs to be completed:
 
 - You must meet the listed mandatory conditions
 - Add the Netopia logos on the website
@@ -95,6 +98,6 @@ For your final validation of the Point of Sale, the following checklist needs to
 
 ![Step six](../../static/img/wordpress/wordpress-plugin-6.png)
 
-Our [technical support team](mailto:implementare@netopia.ro) will help you identify and solve any technical issues that may be blocking your validation.
+In case there is something wrong with the validation process, our [technical support team](mailto:implementare@netopia.ro) will help you identify and solve any technical issues that may be blocking your validation.
 
-After the technical implementation is successful, our team will activate your point of sale, enabling you to start receiving payments.
+After completing all the items in the checklist above and the technical implementation is successful, our team will activate your Point of Sale, enabling you to start receiving payments.
