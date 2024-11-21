@@ -40,6 +40,8 @@ Then, click on the "Install Now" button for the NETOPIA Payments WooCommerce Pay
 
 After installation, don't forget to **click the "Activate" button** that appears in place of the "Install Now" button to activate the plugin.
 
+*You can also find the wordpress plugin page here: https://wordpress.org/plugins/netopia-payments-payment-gateway/*
+
 ### Step 3 - Configure the plugin and validate the technical implementation
 
 To continue setting up the payment solution through the Netopia Payments plugin, go to WooCommerce in the left menu, navigate to "Settings," and then to the "Payments" tab.
@@ -58,7 +60,3 @@ The Account Signature and the public and private key files can be found in the m
 After this, the payment solution integration is complete!
 
 **The last step is to send an email to implementare@netopia.ro and request the final validation. Our technical support team will activate your Point of Sale, enabling you to start receiving payments.**
-
-## Wordpress.org Plugin link
-
-[Netopia Plugin Wordpress.org link](https://wordpress.org/plugins/netopia-payments-payment-gateway/)
