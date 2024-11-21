@@ -13,14 +13,14 @@ A point of sale is a web app or an online shop - on the tech side we support man
 
 To set up a fully operational point of sale, follow these three steps:
 
-### Step 1 - Create the Point of Sale
+#### Step 1 - Create the Point of Sale
 Create a new Point of Sale in the [Netopia Admin Dashboard](https://admin.netopia-payments.com). Define the details such as name, URL, and platform. Once created, you can obtain the signature and encryption keys, which are essential for the technical implementation.
 
-### Step 2 - Integrate the Netopia payment solution
+#### Step 2 - Integrate the Netopia payment solution
 
 Use the provided documentation tailored to your chosen e-commerce platform. For custom web apps, you can integrate the payment solution using our SDKs.
 
-### Step 3 - Request validation of the technical implementation
+#### Step 3 - Request validation of the technical implementation
 
 Once the integration is complete, email implementare@netopia.ro to request the final validation. Our technical support team will activate your Point of Sale, enabling you to start receiving payments.
 

@@ -8,16 +8,16 @@ title: Wordpress Plugin
 To set up the wordpress plugin, follow these three steps:
 
 
-### Step 1 - Create a Point of Sale
+#### Step 1 - Create a Point of Sale
 
 Ensure that you have already set up a Point of Sale configured specifically for WordPress 
 Make sure you have already [created a Point of Sale](/docs/get-started/03-point-of-sale.md). Check out the Point of Sale signature and encryption keys, which are essential for the technical implementation.
 
-### Step 2 - Install and activate the Netopia Payments Wordpress plugin
+#### Step 2 - Install and activate the Netopia Payments Wordpress plugin
 
 Install the Netopia Payments plugin from our Wordpress repository and activate it.
 
-### Step 3 - Configure the plugin and validate the technical implementation
+#### Step 3 - Configure the plugin and validate the technical implementation
 
 Configure the plugin by setting the Point of Sale signature and the associated keys. Once the integration is complete, send an email to implementare@netopia.ro and request the final validation. Our technical support team will activate your Point of Sale, enabling you to start receiving payments.
 
