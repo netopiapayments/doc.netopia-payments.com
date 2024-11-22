@@ -19,7 +19,11 @@ Install the Netopia Payments plugin from our Wordpress repository and activate i
 
 #### Step 3 - Configure the plugin and validate the technical implementation
 
-Configure the plugin by setting the Point of Sale signature and the associated keys. Once the integration is complete, send an email to implementare@netopia.ro and request the final validation. Our technical support team will activate your Point of Sale, enabling you to start receiving payments.
+Configure the plugin by setting the Point of Sale signature and the associated keys.
+
+**Until the final validation is received, you will be using the SANDBOX keys.**
+
+Once the integration is complete, send an email to implementare@netopia.ro and request the final validation. Our technical support team will activate your Point of Sale, enabling you to start receiving payments.
 
 ---
 
