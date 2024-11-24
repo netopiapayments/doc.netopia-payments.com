@@ -3,7 +3,7 @@ sidebar_position: 2
 title: KYC
 ---
 
-# KYC
+## KYC Process
 
 #### Fill in the company information:
 - Basic information, address, bank account information

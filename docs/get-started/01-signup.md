@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Signup
 ---
 
-# Signup
+## Setting up
 
 :::tip[Create your account]
 
@@ -11,10 +11,49 @@ Head over to [https://netopia-payments.com/register-netopia](https://netopia-pay
 
 :::
 
-### Important things to take into account:
+#### Important things to take into account:
 
-- You can only create one company account per fiscal code. Email out support department if you encounter any issues during the registration process.
+- You can only create one company account per fiscal code. Email our support department if you encounter any issues during the registration process.
 
+There are 3 steps required to signup your company with Netopia and start receiving payments
+
+#### Step 1 - Register your company
+
+Head over to [https://netopia-payments.com/register-netopia](https://netopia-payments.com/register-netopia/#gdpr_content) and start the registration process for your NETOPIA Payments account.
+
+#### Step 2 - Add a Point of Sale and configure it
+
+#### Step 3 - Sign the collaboration contract
+
+---
+
+## Detailed instructions
+
+### Step 1 - Register your company
+
+Head over to [https://netopia-payments.com/register-netopia](https://netopia-payments.com/register-netopia/#gdpr_content) and start the registration process for your NETOPIA Payments account.
+
+After registration, you will be able to login to your [Admin dashboard](https://admin.netopia-payments.com) where you will find instructions on how to set up your account.
+
+![Step one](../../static/img/signup/signup-netopia-1.png)
+
+The first thing you need to do is go over our eligibility criteria and agree with them.
+
+![Step one](../../static/img/signup/signup-netopia-2.png)
+
+After clicking on the "Accepta si continua" button, the 2nd point will unlock. In this stage, you need to fill in some information about your company. Our system automatically picks up all the public information based on the Fiscal Code (CUI) that you used when registering the account, therefore some of the information will be already filled in.
+
+![Step one](../../static/img/signup/signup-netopia-3.png)
+
+After you finish providing all the data requested, you can click on "Trimite datele spre validare" to send your information for validation.
+
+![Step one](../../static/img/signup/signup-netopia-4.png)
+
+### Step 2 - Add a Point of Sale and configure it
+
+Now you can create your first Point of Sale.
+
+For this step, you need to head over to the [Points of Sale documentation](/docs/get-started/03-point-of-sale.md) and return here once you have created one to continue the process.
 
 #### Condiții obligatorii de îndeplinit pentru implementarea plății cu cardul online
 
@@ -38,7 +77,7 @@ Head over to [https://netopia-payments.com/register-netopia](https://netopia-pay
 - Gambling sub toate formele (jocuri de noroc, pariuri sportive și nu numai, quizz-uri în care se percepe taxa de participare și se câștigă bani, alte jocuri cu câștiguri în bani – bingo, forex, site-uri de licitații etc)
 - Materiale pentru adulți: închiriere/vânzare casete video de profil, (video)chat, dating, escortealcool (excepție vin și bere)
 - Articole și produse de vânătoare (arme albe și arme de foc, cu muniție clasică și comprimată)
-- Videostreaming (cu excepția cazului în care există acte doveditoare: sunteți persoana care realizează aceste video-uri sau dețineți drepturi de autor asupra lor
+- Videostreaming (cu excepția cazului în care există acte doveditoare: sunteți persoana care realizează aceste video-uri sau dețineți drepturi de autor asupra lor)
 - Servicii privind tarotul, astrologia și conexe
 
 
