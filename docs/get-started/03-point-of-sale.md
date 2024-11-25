@@ -16,6 +16,12 @@ To set up a fully operational point of sale, follow these three steps:
 #### Step 1 - Create the Point of Sale
 Create a new Point of Sale in the [Netopia Admin Dashboard](https://admin.netopia-payments.com). Define the details such as name, URL, and platform. Once created, you can obtain the signature and encryption keys, which are essential for the technical implementation.
 
+:::info
+
+Until the final validation is received, you will be using only the SANDBOX keys
+
+:::
+
 #### Step 2 - Integrate the Netopia payment solution
 
 Use the provided documentation tailored to your chosen e-commerce platform. For custom web apps, you can integrate the payment solution using our SDKs.
