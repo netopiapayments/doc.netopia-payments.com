@@ -41,7 +41,7 @@ You need a Point of Sale before you can configure a payment gateway. If you don'
 
 ### Step 2 - Install and activate the Netopia Payments Wordpress plugin
 
-Download NETOPIA Payments Wordpress Plugin from the following link: [netopia-payments-payment-gateway.zip](/static/netopia-payments-payment-gateway.zip)
+Download NETOPIA Payments Wordpress Plugin from the following link: [netopia-payments-payment-gateway.zip](/netopia-payments-payment-gateway.zip)
 
 In your WordPress dashboard, go to Plugins > Add New and click Upload Plugin.
 
