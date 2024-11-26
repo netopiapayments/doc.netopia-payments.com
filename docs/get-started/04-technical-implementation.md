@@ -3,15 +3,27 @@ sidebar_position: 5
 title: Technical Implementation
 ---
 
-Begin the technical implementation of the payment feature into your e-commerce platform. You will use our sandbox environment for all the tests.
+:::info[Sandbox environment]
 
-If you already use a shopping cart platform, choose the appropriate documentation page from the following:
+---
+
+You can use the Sandbox environment to test all your integrations and configurations.
+
+Until your final validation you will be required to **use only the Sandbox Keys**.
+
+To access the Sandbox environment, simply click on the "Mediu de testare / Testing environment" button in the left menu of the Netopia Admin dashboard.
+
+:::
+
+
+
+Below you can find the documentation for the integrations currently supported by Netopia:
 - [Wordpress](/docs/payment-plugins/wordpress)
 - [Prestashop](/docs/payment-plugins/prestashop)
 - [Magento](/docs/payment-plugins/magento)
 - [Opencart](/docs/payment-plugins/opencart)
 
-If you don't use a shopping cart platform, and you develop you custom online store, head over to the [Payment SDKs](/docs/payment-sdks) page, or directly to the documentation page related to your web framework:
+If you are developing your own custom online store, head over to the [Payment SDKs](/docs/payment-sdks) page, or directly access the documentation for the following programming languages:
 - [PHP](/docs/payment-sdks/php)
 - [Node JS](/docs/payment-sdks/nodejs)
 - [Python](/docs/payment-sdks/python)
@@ -19,5 +31,3 @@ If you don't use a shopping cart platform, and you develop you custom online sto
 - [Java](/docs/payment-sdks/java)
 
 If none of those apply to your online store, please [contact us](mailto:implementare@netopia.ro) and we'll redirect you to an appropriate documentation.
-
-Follow the next help categories for more details.
