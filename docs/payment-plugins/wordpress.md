@@ -21,7 +21,7 @@ Install the Netopia Payments plugin from our Wordpress repository and activate i
 
 :::info
 
-Until the final validation is received, you will be using only the SANDBOX keys
+Until the final validation is received from our technical support team, you will only use the SANDBOX keys. After the validation of the technical implementation, you can also use the production keys (live keys). The SANDBOX keys are only used for testing.
 
 :::
 
@@ -41,14 +41,11 @@ You need a Point of Sale before you can configure a payment gateway. If you don'
 
 ### Step 2 - Install and activate the Netopia Payments Wordpress plugin
 
-In the WordPress dashboard, go to the "Plugins" page in the left menu and search for "netopia" in the search box.
-Then, click on the "Install Now" button for the NETOPIA Payments WooCommerce Payment Gateway plugin.
+Download NETOPIA Payments Wordpress Plugin from the following link: [netopia-payments-payment-gateway.zip](/static/netopia-payments-payment-gateway.zip)
 
-![Step two](../../static/img/wordpress/wordpress-plugin-7.png)
+In your WordPress dashboard, go to Plugins > Add New and click Upload Plugin.
 
-After installation, don't forget to **click the "Activate" button** that appears in place of the "Install Now" button to activate the plugin.
-
-*You can also find the wordpress plugin page here: https://wordpress.org/plugins/netopia-payments-payment-gateway/*
+Select the ZIP file you downloaded, click Install Now, and then don't forget to **click the "Activate" button** that appears in place of the "Install Now" button, once the installation is complete.
 
 ### Step 3 - Configure the plugin and validate the technical implementation
 
