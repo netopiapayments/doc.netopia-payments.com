@@ -37,4 +37,6 @@ The final piece of information required is about the real beneficiaries
 
 ![Step one](../../static/img/signup/signup-netopia-6.png)
 
-After all the information is filled in, you can click on "Trimite datele spre validare" to send the data to Netopia for validation.
+After all the information is filled in, you can click on "Trimite datele spre validare" to send the data to NETOPIA for validation.
+
+Our support team will review the data and notify you via email if any discrepancies are found. Once the data is validated, your account will be activated, allowing you to set up your first point of sale to start receiving payments.
