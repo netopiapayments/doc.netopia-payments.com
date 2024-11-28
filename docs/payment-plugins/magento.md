@@ -3,67 +3,93 @@ sidebar_position: 4
 title: Magento Plugin
 ---
 
-# NETOPIA Payments module for Magento 2.4.X
-###### (for previous versions using the other branches of [this GitHub repository](https://github.com/mobilpay/Magento))
+## Setting up
 
-## Options
-* Card payment
-* mobilPay WALLET
+:::info[VERSION]
 
-## Installation
-The Module placed in folder "Netopia"
-1. put **Netopia** folder inside of < your_magento_root >/app/code/
-    * verify the ownership & make sure have right user and/or group ownership
-2. SSH to your Magento server and run the following commands
-    * `php bin/magento setup:upgrade`
-    * `php bin/magento setup:static-content:deploy`
-    * `php bin/magento ca:cl`
-3.  Complete the **Configuration**   
-4.  **Enable** the module.
-    ###### Additional option
-    By Enable the **Allow mobilPay WALLET Payment** you will give this option to your clients to pay also via **mobilPay WALLET** by scan a simple **QrCode** 
-    * To use **mobilPay WALLET Payment**, the **Username** and **Password** should be set as your account on **https://admin.mobilpay.ro**
-5. Download your keys from https://admin.mobilpay.ro/ for Live mode and https://sandbox.mobilpay.ro for Sandbox mode.
-   Set your Mode at Mode **Configuration** and  Upload the certificates.
-   
-   Note : if you would like to have possibility to work with both mode (**Sandbox and Live**), you will need the keys for each mode.
+The Netopia Payments module for Magento runs on version 2.4.X
 
+For previous versions please use the other branches on [our Github repository](https://github.com/mobilpay/Magento)
 
-## Verification
-By run the following command you can make sure, if this module is installed successfully on your Magento Proiect
-* ```php bin/magento module:status```
+:::
 
-## After installation
-Recommended to firstly, go to Admin panel & fill the necessary data
-```<your_magento_admin>->Stores->Configuration->Sales->Payment Methods->Netopia Payments```
+### Installation
 
-* #### Configuration
-    * **Base configuration** : To enable / disable the payment method, switch to Live or Sandbox, ....
-    * **Certificate Configuration** : To uploade / remove the public & private keys for Live & Sandbox
-    * **Custom configuration** : To set order status regarding the payment status, recommanded to use Defulte one 
-    * **mobilPay WALLET Configuration** : To set mobilPay WALLET setting
-    * **Conditions / Agreements** : To declare the agreements with NETOPIA Payments and send the agreement to NETOPIA Payments.
-        * before send the agreements, make sure you already uploaded the keys & save the setting & agreements.
-        
-    Note : The fileds are not complited from configuration section, will set by default value, 
+Download the Magento module from [our Github repository](https://github.com/mobilpay/Magento) by pressing on the green "Code" button in the top right and then "Download ZIP"
 
-## Where Keys / Certificates are located
-The Public & Private Keys for Live and Sandbox are located in < your_magento_root >/app/code/Netopia/Netcard/etc/certificates
-* make sure you have right ownership & permition
-### Other general usefull note
-If in any case you update/upgrade your Magento Module & not see the changes, so maybe is cached.
-You can using such command like this ```php bin/magento ca:cl``` to clean the cache or
-Using such command ```bin/magento setup:di:compile``` to compile or regenerate your modules.
-Sometime remove the contents of actual cache folders such as ```MagentoRoot/var/cache/``` | ```MagentoRoot/var/page_cache/``` | ```MagentoRoot/generated/code``` is helping too
+![Step one](../../static/img/magento/magento-plugin-1.png)
 
-##### Good to know
-* To get the module compatible with previous versions of Magento, using the other branches of this GitHub repository. for ex. for Magento Version 2.3.X we can get the module by run git command like : **git clone --single-branch --branch V2.3 https://github.com/mobilpay/Magento.git**
+After unzipping the file, you will find a folder called "Netopia" in Magento-master/app/code
 
-NETOPIA Payments development team try to keep compatibility of the Magento module with latest version of Magento, in order to helping you to implamenting your ecomerce website faster.
+This folder must pe placed on your Magento server, inside of `<your_magento_root>/app/code`
 
-## Tested up to : 
-Magento : **2.4.6**
+Dont forget to verify the ownership and make sure you have the right user and/or group ownership
 
-PHP : **8.2.8**
+![Step one](../../static/img/magento/magento-plugin-2.png)
 
-Openssl : **3.0**
+Next you need to SSH into your Magento server, go into the magento folder and run the following commands:
+
+- `php bin/magento module:enable Netopia_Netcard`
+- `php bin/magento setup:upgrade`
+- `php bin/magento setup:static-content:deploy`
+    * If the above command doesn't work, you can use `php bin/magento setup:static-content:deploy -f` to force it. The terminal will also instruct you to use this command
+- `php bin/magento cache:flush`
+
+:::warning[IMPORTANT]
+
+Don't forget to enable the module using the commands above, otherwise you will not be able to see it in your Magento dashboard!
+
+:::
+
+### Configuration
+
+Once you completed installing the Netopia module, you will be able to access it from your Magento dashboard by going to Stores -> Configuration (under Settings)
+
+![Step one](../../static/img/magento/magento-plugin-3.png)
+
+From here, you will find the module under SALES -> Payment Methods -> Other payment methods. You can click on "Configure" to start configuring the module.
+
+![Step one](../../static/img/magento/magento-plugin-4.png)
+
+Once you open the Netopia configuration, you will have 4 main sections: Basic configuration, Advanced configuration, Mode configuration and Countries / Currencies available.
+
+First we need to go to "Basic configuration" and fill in the Merchant id / Signature.
+
+![Step one](../../static/img/magento/magento-plugin-5.png)
+
+The Account Signature can be found in the merchant account (https://admin.netopia-payments.com) → "Puncte de vanzare" → Options (the icon with 3 dots) → "Setari tehnice"
+
+![Step one](../../static/img/magento/magento-plugin-6.png)
+
+Next we need to go to "Mode configuration" to set up the Public and Private Keys. We can switch between Live and Sandbox mode by selecting Enable or Disable from the "Live Mode" dropdown.
+
+![Step one](../../static/img/magento/magento-plugin-7.png)
+
+The Public and Private key files can be found in the merchant account (https://admin.netopia-payments.com) → "Puncte de vanzare" → Options (the icon with 3 dots) → "Setari tehnice"
+
+**Please note that until the final validation is received, you will be using only the SANDBOX keys**
+
+![Step one](../../static/img/magento/magento-plugin-6.png)
+
+:::warning[SANDBOX KEYS]
+
+Make sure you click on "Mediu de testare / Testing environment" first to access the Sandbox keys! After that, simply repeat the same process from above to receive your keys.
+
+:::
+
+If you need access to the uploaded Private and Public key files, they are located in your Magento root folder under /app/code/Netopia/Netcard/etc/certificates
+
+---
+
+After this, the payment solution integration is complete!
+
+**The last step is to send an email to implementare@netopia.ro and request the final validation. Our technical support team will activate your Point of Sale, enabling you to start receiving payments.**
+
+---
+
+Tested up to:
+
+- Magento: Version **2.4.6**
+- PHP: Version **8.2.8**
+- Openssl: Version **3.0**
+
