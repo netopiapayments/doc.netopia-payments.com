@@ -53,6 +53,12 @@ After you completed all the requirements listed above, you can now access our AP
 
 - NETOPIA offers a convenient way to test the payment process during or after your application's implementation. With a dedicated sandbox environment that mirrors the features of the live one, you can ensure everything works seamlessly.
 
+#### OpenAPI 3.0 Specifications
+
+You can check out our OpenAPI link to get a more detailed view into Netopia Payments' API
+
+[https://secure.sandbox.netopia-payments.com/spec](https://secure.sandbox.netopia-payments.com/spec)
+
 ### Starting a payment
 
 To initiate a new payment, you need to access the /payment/card/start endpoint. Here you send the full details of a single transaction to the Netopia Payments' server.
@@ -491,6 +497,8 @@ There are different responses based on the type of card being used. If 3D Secure
 
 You can look at some responses example below.
 
+For the full list of response codes you can check out the [Status & Error Codes](#status-codes)
+
 <details>
 <summary>Sample responses</summary>
 <Tabs groupId="sample-responses">
@@ -701,6 +709,8 @@ The result will be sent as a token called **paRes** to your designated **backUrl
 
 Once you receive the **paRes** token, it must be verified with Netopia Payments to complete the authorization process through the **verify-auth endpoint**.
 
+For the full list of response codes you can check out the [Status & Error Codes](#status-codes)
+
 ### Verify Auth
 
 The **verify-auth endpoint** is also used only for the transactions with 3D Secure cards, and only **after** you have received the response from the **authorize endpoint**.
@@ -832,6 +842,8 @@ echo $response;
 
 You can look at some response examples below (Success and error).
 
+For the full list of response codes you can check out the [Status & Error Codes](#status-codes)
+
 <details>
 <summary>Sample responses</summary>
 <Tabs groupId="sample-responses">
@@ -896,7 +908,26 @@ Here is a list of test cards that you can use in the SANDBOX environment.
 
     (*) *Can be used to generate transactions both in full amount, or in installments*
 
+## Status & Error Codes {#status-codes}
 
+### Status codes
+
+-   **3** : Is paid
+-   **5** : Is confirmed
+-   **12** : Invalid Account
+-   **15** : Need Authorization
+
+### Error codes
+
+-   **100** : Set authenticationToken & ntpID to session
+-   **56** : Duplicated Order ID
+-   **99** : There is another order with a different price
+-   **19** : Expire Card Error
+-   **20** : Insufficient Funds Error
+-   **21** : CVV Error
+-   **22** : CVV Error
+-   **34** : Card Not Allowed Transaction Error
+-   **0** : Card has no 3D Secure
 
 # Introduction
 
