@@ -47,11 +47,11 @@ You can generate an API Key for our sandbox testing environment by clicking on t
 
 After you completed all the requirements listed above, you can now access our API endpoints.
 
-**LIVE**: https://secure.mobilpay.ro/pay
-
-**SANDBOX (Testing environment)**: https://secure.sandbox.netopia-payments.com
-
-- NETOPIA offers a convenient way to test the payment process during or after your application's implementation. With a dedicated sandbox environment that mirrors the features of the live one, you can ensure everything works seamlessly.
+> **LIVE**: https://secure.mobilpay.ro/pay
+>
+> **SANDBOX (Testing environment)**: https://secure.sandbox.netopia-payments.com
+>
+> - NETOPIA offers a convenient way to test the payment process during or after your application's implementation. With a dedicated sandbox environment that mirrors the features of the live one, you can ensure everything works seamlessly.
 
 #### OpenAPI 3.0 Specifications
 
@@ -59,7 +59,7 @@ You can check out our OpenAPI link to get a more detailed view into Netopia Paym
 
 [https://secure.sandbox.netopia-payments.com/spec](https://secure.sandbox.netopia-payments.com/spec)
 
-### Starting a payment
+### Start payment - CARD
 
 To initiate a new payment, you need to access the /payment/card/start endpoint. Here you send the full details of a single transaction to the Netopia Payments' server.
 
@@ -81,10 +81,12 @@ https://secure-sandbox.netopia-payments.com/payment/card/start
 
 :::
 
+Based on the response to this call the process either stops or you need to continue with the [Authorize](#authorize) endpoint.
+
 Below you can find the code structure and some sample requests
 
 <details>
-<summary>Start payment request code structure</summary>
+<summary>Start card payment request code structure</summary>
 ```
 {
   "config": {
@@ -179,102 +181,9 @@ Below you can find the code structure and some sample requests
 </details>
 
 <details>
-<summary>Sample request (JSON, CURL, PHP)</summary>
+<summary>Sample request (CURL, PHP)</summary>
 <Tabs groupId="sample-request">
-  <TabItem value="json" label="JSON structure">
-
- ```
-{
-  "config": {
-    "emailTemplate": "confirm",
-    "notifyUrl": "http://yourdomain.com/example/ipn.php",
-    "redirectUrl": "http://yourdomain.com/example/backUrl.php",
-    "language": "ro"
-  },
-  "payment": {
-    "options": {
-      "installments": 1,
-      "bonus": 0
-    },
-    "instrument": {
-      "type": "card",
-      "account": "9900004810225098",
-      "expMonth": 1,
-      "expYear": 2023,
-      "secretCode": "111",
-      "token": ""
-    },
-    "data": {
-      "BROWSER_USER_AGENT": "AMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36",
-      "OS": "Linux",
-      "OS_VERSION": "x86_64",
-      "MOBILE": "false",
-      "SCREEN_POINT": "false",
-      "SCREEN_PRINT": "Current Resolution: 1920x1080, Available Resolution: 1853x1053, Color Depth: 24, Device XDPI: undefined, Device YDPI: undefined",
-      "BROWSER_COLOR_DEPTH": "24",
-      "BROWSER_SCREEN_HEIGHT": "1080",
-      "BROWSER_SCREEN_WIDTH": "1920",
-      "BROWSER_PLUGINS": "PDF Viewer, Chrome PDF Viewer, Chromium PDF Viewer, Microsoft Edge PDF Viewer, WebKit built-in PDF",
-      "BROWSER_JAVA_ENABLED": "false",
-      "BROWSER_LANGUAGE": "en-US",
-      "BROWSER_TZ": "Europe/Bucharest",
-      "BROWSER_TZ_OFFSET": "-120",
-      "IP_ADDRESS": "37.221.166.134"
-    }
-  },
-  "order": {
-    "ntpID": "",
-    "posSignature": "RAND-OM01-SIGN-TURE-3POS",
-    "dateTime": "2019-08-24T14:15:22Z",
-    "description": "Order Desc",
-    "orderID": "stringOrderIDdddfgdfg3323",
-    "amount": 200,
-    "currency": "RON",
-    "billing": {
-      "email": "user@example.com",
-      "phone": "string",
-      "firstName": "string",
-      "lastName": "string",
-      "city": "string",
-      "country": 0,
-      "state": "string",
-      "postalCode": "string",
-      "details": "string"
-    },
-    "shipping": {
-      "email": "user@example.com",
-      "phone": "string",
-      "firstName": "string",
-      "lastName": "string",
-      "city": "string",
-      "country": 0,
-      "state": "string",
-      "postalCode": "string",
-      "details": "string"
-    },
-    "products": [
-      {
-        "name": "string",
-        "code": "string",
-        "category": "string",
-        "price": 0,
-        "vat": 0
-      }
-    ],
-    "installments": {
-      "selected": 1,
-      "available": [
-        0
-      ]
-    },
-    "data": {
-      "property1": "string",
-      "property2": "string"
-    }
-  }
-}
-```
-  </TabItem>
+ 
   <TabItem value="curl" label="CURL Request">
 
   ```shell
@@ -565,6 +474,504 @@ For the full list of response codes you can check out the [Status & Error Codes]
     "currency": "RON",
     "ntpID": "1309088",
     "status": 5
+  }
+}
+```
+</TabItem>
+</Tabs>
+
+</details>
+
+### Start payment - BNPL
+
+#### Endpoint
+
+:::tip[LIVE]
+
+```
+https://secure.mobilpay.ro/pay/payment/bnpl/start
+```
+
+:::
+
+:::warning[SANDBOX]
+
+```
+https://secure.sandbox.netopia-payments.com/payment/bnpl/start
+```
+
+:::
+
+Based on the response to this call the process either stops or you need to continue with the [Verify Auth](#verify-auth) endpoint.
+
+Below you can find the code structure and some sample requests
+
+<details>
+<summary>Start BNPL payment request code structure</summary>
+```
+{
+  "config": {
+    "emailTemplate": "string",
+    "emailSubject": "Payment confirmation for www.my.domain",
+    "cancelUrl": "string",
+    "notifyUrl": "https://www.my.domain/my_notify_url",
+    "redirectUrl": "https://www.my.domain/my_3dreturn_url",
+    "language": "en"
+  },
+  "payment": {
+    "options": {
+      "installments": 0,
+      "bonus": 0,
+      "split": [
+        {
+          "posID": 0,
+          "amount": 0
+        }
+      ]
+    },
+    "instrument": {
+      "type": "string",
+      "account": "string",
+      "expMonth": 0,
+      "expYear": 0,
+      "secretCode": "stri",
+      "token": "string"
+    },
+    "data": {
+      "property1": "string",
+      "property2": "string"
+    }
+  },
+  "order": {
+    "ntpID": "string",
+    "posSignature": "string",
+    "dateTime": "2024-08-24T14:15:22Z",
+    "description": "string",
+    "orderID": "string",
+    "amount": 0,
+    "currency": "RON",
+    "billing": {
+      "email": "user@example.com",
+      "phone": "string",
+      "firstName": "string",
+      "lastName": "string",
+      "city": "string",
+      "country": 0,
+      "countryName": "string",
+      "state": "string",
+      "postalCode": "string",
+      "details": "string"
+    },
+    "shipping": {
+      "email": "user@example.com",
+      "phone": "string",
+      "firstName": "string",
+      "lastName": "string",
+      "city": "string",
+      "country": 0,
+      "state": "string",
+      "postalCode": "string",
+      "details": "string"
+    },
+    "products": [
+      {
+        "name": "string",
+        "code": "string",
+        "category": "string",
+        "price": -3.402823669209385e+38,
+        "vat": -3.402823669209385e+38
+      }
+    ],
+    "installments": {
+      "selected": 0,
+      "available": [
+        0
+      ]
+    },
+    "data": {
+      "property1": "string",
+      "property2": "string"
+    },
+    "clientID": "string",
+    "scaExemptionInd": "string"
+  }
+}
+```
+</details>
+
+<details>
+<summary>Sample request (CURL, PHP)</summary>
+<Tabs groupId="sample-request">
+  <TabItem value="curl" label="CURL Request">
+
+  ```shell
+  curl --request POST \
+  --url https://secure.sandbox.netopia-payments.com/payment/bnpl/start \
+  --header 'Accept: application/json' \
+  --header 'Authorization: 7Gqi9RyEVFzUV8sEwL4Prcq1lDgJFHNOskm--zNlito8nX5n0I2_mgVAfrw=' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "config": {
+    "emailTemplate": "string",
+    "emailSubject": "Payment confirmation for www.my.domain",
+    "cancelUrl": "string",
+    "notifyUrl": "https://www.my.domain/my_notify_url",
+    "redirectUrl": "https://www.my.domain/my_3dreturn_url",
+    "language": "en"
+  },
+  "payment": {
+    "options": {
+      "installments": 0,
+      "bonus": 0,
+      "split": [
+        {
+          "posID": 0,
+          "amount": 0
+        }
+      ]
+    },
+    "instrument": {
+      "type": "string",
+      "account": "string",
+      "expMonth": 0,
+      "expYear": 0,
+      "secretCode": "stri",
+      "token": "string"
+    },
+    "data": {
+      "property1": "string",
+      "property2": "string"
+    }
+  },
+  "order": {
+    "ntpID": "string",
+    "posSignature": "string",
+    "dateTime": "2019-08-24T14:15:22Z",
+    "description": "string",
+    "orderID": "string",
+    "amount": 0,
+    "currency": "RON",
+    "billing": {
+      "email": "user@example.com",
+      "phone": "string",
+      "firstName": "string",
+      "lastName": "string",
+      "city": "string",
+      "country": 0,
+      "countryName": "string",
+      "state": "string",
+      "postalCode": "string",
+      "details": "string"
+    },
+    "shipping": {
+      "email": "user@example.com",
+      "phone": "string",
+      "firstName": "string",
+      "lastName": "string",
+      "city": "string",
+      "country": 0,
+      "state": "string",
+      "postalCode": "string",
+      "details": "string"
+    },
+    "products": [
+      {
+        "name": "string",
+        "code": "string",
+        "category": "string",
+        "price": -3.402823669209385e+38,
+        "vat": -3.402823669209385e+38
+      }
+    ],
+    "installments": {
+      "selected": 0,
+      "available": [
+        0
+      ]
+    },
+    "data": {
+      "property1": "string",
+      "property2": "string"
+    },
+    "clientID": "string",
+    "scaExemptionInd": "string"
+  }
+}'
+  ```
+
+  </TabItem>
+  <TabItem value="php" label="PHP Request">
+
+  ```php
+  <?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, [
+  CURLOPT_URL => "https://secure.sandbox.netopia-payments.com/payment/bnpl/start",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => json_encode([
+    'config' => [
+        'emailTemplate' => 'string',
+        'emailSubject' => 'Payment confirmation for www.my.domain',
+        'cancelUrl' => 'string',
+        'notifyUrl' => 'https://www.my.domain/my_notify_url',
+        'redirectUrl' => 'https://www.my.domain/my_3dreturn_url',
+        'language' => 'en'
+    ],
+    'payment' => [
+        'options' => [
+                'installments' => 0,
+                'bonus' => 0,
+                'split' => [
+                    [
+                    'posID' => 0,
+                    'amount' => 0
+                    ]
+                ]
+        ],
+        'instrument' => [
+                'type' => 'string',
+                'account' => 'string',
+                'expMonth' => 0,
+                'expYear' => 0,
+                'secretCode' => 'stri',
+                'token' => 'string'
+        ],
+        'data' => [
+                'property1' => 'string',
+                'property2' => 'string'
+        ]
+    ],
+    'order' => [
+        'ntpID' => 'string',
+        'posSignature' => 'string',
+        'dateTime' => '2019-08-24T14:15:22Z',
+        'description' => 'string',
+        'orderID' => 'string',
+        'amount' => 0,
+        'currency' => 'RON',
+        'billing' => [
+                'email' => 'user@example.com',
+                'phone' => 'string',
+                'firstName' => 'string',
+                'lastName' => 'string',
+                'city' => 'string',
+                'country' => 0,
+                'countryName' => 'string',
+                'state' => 'string',
+                'postalCode' => 'string',
+                'details' => 'string'
+        ],
+        'shipping' => [
+                'email' => 'user@example.com',
+                'phone' => 'string',
+                'firstName' => 'string',
+                'lastName' => 'string',
+                'city' => 'string',
+                'country' => 0,
+                'state' => 'string',
+                'postalCode' => 'string',
+                'details' => 'string'
+        ],
+        'products' => [
+                [
+                'name' => 'string',
+                'code' => 'string',
+                'category' => 'string',
+                'price' => -3.402823669209385e+38,
+                'vat' => -3.402823669209385e+38
+                ]
+        ],
+        'installments' => [
+                'selected' => 0,
+                'available' => [
+                    0
+                ]
+        ],
+        'data' => [
+                'property1' => 'string',
+                'property2' => 'string'
+        ],
+        'clientID' => 'string',
+        'scaExemptionInd' => 'string'
+    ]
+  ]),
+  CURLOPT_HTTPHEADER => [
+    "Accept: application/json",
+    "Authorization: YourApiKeyFromNETOPIA-PaymentsAdminPANEL--YourUNICHETOKEN",
+    "Content-Type: application/json"
+  ],
+]);
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+  ```
+  </TabItem>
+</Tabs>
+</details>
+
+You can look at some responses example below.
+
+For the full list of response codes you can check out the [Status & Error Codes](#status-codes)
+
+<details>
+<summary>Sample response</summary>
+<Tabs groupId="sample-responses">
+<TabItem value="response-bnpl" label="Success Response">
+```
+{
+  "payment": {
+    "method": "string",
+    "ntpID": "string",
+    "status": 0,
+    "amount": 10,
+    "currency": "string",
+    "paymentURL": "string",
+    "token": "string",
+    "data": {
+      "property1": "string",
+      "property2": "string"
+    }
+  },
+  "customerAction": {
+    "type": "string",
+    "url": "http://ACS.url",
+    "authenticationToken": "string",
+    "formData": {
+      "property1": "string",
+      "property2": "string"
+    }
+  },
+  "error": {
+    "code": "string",
+    "message": "string",
+    "details": [
+      {
+        "code": "string",
+        "message": "string",
+        "field": "string",
+        "attributes": {
+          "property1": "string",
+          "property2": "string"
+        }
+      }
+    ]
+  }
+}
+```
+</TabItem>
+
+</Tabs>
+
+</details>
+
+### BNPL Return
+
+:::tip[LIVE]
+
+```
+https://secure.mobilpay.ro/pay/payment/bnpl/return
+```
+
+:::
+
+:::warning[SANDBOX]
+
+```
+https://secure.sandbox.netopia-payments.com/payment/bnpl/return
+```
+
+:::
+
+Below you can find the code structure
+
+<details>
+<summary>BNPL Return request code structure</summary>
+```
+{
+  "ntpID": "string"
+}
+```
+</details>
+
+You can look at some response examples below (Success and error).
+
+For the full list of response codes you can check out the [Status & Error Codes](#status-codes)
+
+<details>
+<summary>Sample responses</summary>
+<Tabs groupId="sample-responses">
+<TabItem value="response-yes" label="Success Response">
+```
+{
+  "payment": {
+    "method": "string",
+    "allowedMethods": [
+      "string"
+    ],
+    "ntpID": "string",
+    "rrn": "string",
+    "status": 0,
+    "amount": 1,
+    "currency": "RON",
+    "paymentURL": "string",
+    "token": "string",
+    "operationDate": "2019-08-24T14:15:22Z",
+    "options": {
+      "installments": 0,
+      "bonus": 0,
+      "split": [
+        {
+          "posID": 0,
+          "amount": 0
+        }
+      ]
+    },
+    "binding": {
+      "token": "string",
+      "expireMonth": 0,
+      "expireYear": 0
+    },
+    "data": {
+      "property1": "string",
+      "property2": "string"
+    }
+  },
+ 
+}
+```
+</TabItem>
+<TabItem value="response-yes-3ds" label="Error Response">
+```
+{
+ "error": {
+    "code": "string",
+    "message": "string",
+    "details": [
+      {
+        "code": "string",
+        "message": "string",
+        "field": "string",
+        "attributes": {
+          "property1": "string",
+          "property2": "string"
+        }
+      }
+    ]
   }
 }
 ```
@@ -930,5 +1337,7 @@ Here is a list of test cards that you can use in the SANDBOX environment.
 -   **0** : Card has no 3D Secure
 
 ## API Reference
--   NETOPIA Payments API **Version 2** 
--   Released in **2021**
+
+>   NETOPIA Payments API **Version 2** 
+>
+>   Released in **2021**
