@@ -92,6 +92,7 @@ const sidebars = {
       items: [
         'payment-sdks/php',
         'payment-sdks/nodejs',
+        'payment-sdks/go',
         'payment-sdks/python',
         'payment-sdks/ruby',
         'payment-sdks/java',
