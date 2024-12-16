@@ -7,6 +7,8 @@ title: Go SDK
 
 The NETOPIA Payments Go SDK provides seamless integration with the Netopia Payments API v2. It allows developers to handle payments, IPN verification, and status retrieval efficiently within their Go applications.
 
+Github Repository: https://github.com/netopiapayments/go-sdk
+
 ### Dependencies
 
 - https://github.com/golang-jwt/jwt (latest version: v5)
