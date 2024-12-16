@@ -179,6 +179,10 @@ func  ipnHandler(w  http.ResponseWriter, r *http.Request) {
 
 ```
 
+## Sample App
+
+You can check out our Go Sample App which contains the backend and Postman Collections by going to its [Github repository here](https://github.com/netopiapayments/sample-app-go).
+
 ## Running tests
 
 To ensure the SDK functions as expected, comprehensive unit tests are provided. You can run unit tests suit using the following command:
