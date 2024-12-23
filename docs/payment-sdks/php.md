@@ -5,7 +5,13 @@ title: PHP SDK
 
 ## Overview
 
-The NETOPIA Payments PHP SDK provides seamless integration with the Netopia Payments API v2. It allows developers to handle payments, IPN verification, and status retrieval efficiently within their PHP applications.
+:::warning[API V2]
+
+The NETOPIA Payments PHP SDK provides seamless integration with the Netopia Payments API v2. 
+
+:::
+
+It allows developers to handle payments, IPN verification, and status retrieval efficiently within their PHP applications.
 
 Github Repository: https://github.com/netopiapayments/composer
 
@@ -291,7 +297,7 @@ To verify authentication you will need to send the request to verify-auth end po
 
 ```php
     $verifyAuth = new VerifyAuth();
-    $verifyAuth->apiKey              = 'ApiKey_GENERATE-YOUR-KEY-FROM-MobilPay-AND-USE-IT-HEAR';
+    $verifyAuth->apiKey              = 'ApiKey_GENERATE-YOUR-KEY-FROM-NETOPIA-AND-USE-IT-HEAR';
     $verifyAuth->authenticationToken = 'YOUR-UNIQUE-AUTHENTICATION-TOKEN-PER-REQUEST';
     $verifyAuth->ntpID               = 'THE-UNIQUE-TRANSACTION-ID';
     $verifyAuth->paRes               = 'THE-DATA-WHAT-YOU-RECIVE-IT-FROM-THE-BANK';
