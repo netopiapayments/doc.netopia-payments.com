@@ -65,21 +65,17 @@ To initiate a new payment, you need to access the /payment/card/start endpoint. 
 
 #### Endpoint
 
-:::tip[LIVE]
+Live:
 
 ```
 https://secure.mobilpay.ro/pay/payment/card/start
 ```
 
-:::
-
-:::warning[SANDBOX]
+Sandbox:
 
 ```
 https://secure-sandbox.netopia-payments.com/payment/card/start
 ```
-
-:::
 
 Based on the response to this call the process either stops or you need to continue with the [Authorize](#authorize) endpoint.
 
@@ -486,21 +482,17 @@ For the full list of response codes you can check out the [Status & Error Codes]
 
 #### Endpoint
 
-:::tip[LIVE]
+Live:
 
 ```
 https://secure.mobilpay.ro/pay/payment/bnpl/start
 ```
 
-:::
-
-:::warning[SANDBOX]
+Sandbox:
 
 ```
 https://secure.sandbox.netopia-payments.com/payment/bnpl/start
 ```
-
-:::
 
 Based on the response to this call the process either stops or you need to continue with the [Verify Auth](#verify-auth) endpoint.
 
@@ -881,21 +873,17 @@ For the full list of response codes you can check out the [Status & Error Codes]
 
 ### BNPL Return
 
-:::tip[LIVE]
+Live:
 
 ```
 https://secure.mobilpay.ro/pay/payment/bnpl/return
 ```
 
-:::
-
-:::warning[SANDBOX]
+Sandbox:
 
 ```
 https://secure.sandbox.netopia-payments.com/payment/bnpl/return
 ```
-
-:::
 
 Below you can find the code structure
 
@@ -988,21 +976,17 @@ You will need to send a HTTP request via POST method to the **card holder's bank
 
 #### Endpoint
 
-:::tip[LIVE]
+Live:
 
 ```
 https://secure.mobilpay.ro/pay/authorize
 ```
 
-:::
-
-:::warning[SANDBOX]
+Sandbox:
 
 ```
 https://secure.sandbox.netopia-payments.com/sandbox/authorize
 ```
-
-:::
 
 Below you can find the code structure
 
@@ -1126,21 +1110,17 @@ In order to complete a transaction process you need to verify the **paRes** toke
 
 #### Endpoint
 
-:::tip[LIVE]
+Live:
 
 ```
 https://secure.mobilpay.ro/pay/card/verify-auth
 ```
 
-:::
-
-:::warning[SANDBOX]
+Sandbox:
 
 ```
 https://secure.sandbox.netopia-payments.com/payment/card/verify-auth
 ```
-
-:::
 
 Below you can find the code structure
 
@@ -1305,7 +1285,6 @@ Here is a list of test cards that you can use in the SANDBOX environment.
         | Description    | Card Number    | CVV    | Expiration Date | Full Name |
         | :---           | :----:         | :----:  | :----:          | :---:      |
         | Accepted card, Garanti Bonuscard (*)       | 9900004810225098  | 111 | Any future date | Test Test |
-        | Accepted card, Cardavantaj (*)   | 99110059532258  | 111 | Any future date | Test Test |
         | Expired card  | 9900541631437790 | 111 | Any future date | Test Test |
         | Insufficient funds   | 9900518572831942 | 111 | Any future date | Test Test |
         | Incorrect CVV number | 9900827979991500  | 111 | Any future date | Test Test |
