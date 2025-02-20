@@ -189,7 +189,7 @@ You can now send your request:
 
 #### Example response
 
-Below you can find an example response. You can also head over to the [Payment V2 API page](/docs/payment-api/v2.x/intro.md) for more detailed information.
+Below you can find an example response. You can also head over to the [Payment V2 API page](/docs/payment-api/v2.x/introduction) for more detailed information.
 
 <details>
 <summary>View response</summary>
@@ -229,7 +229,7 @@ To continue the payment progress, you will need to verify the status and error c
 
 For example, an error code **100** and status code **15** means you need to Authorize the transaction via the cardholder's bank first (3D Secure). An error code **0** and status code **3** means that card has no 3D Secure, and that the order is paid.
 
-For the complete list of codes please go to the [Payment V2 API page](/docs/payment-api/v2.x/intro.md), under the Status & Error codes section.
+For the complete list of codes please go to the [Payment V2 API page](/docs/payment-api/v2.x/introduction), under the Status & Error codes section.
 
 ### Authorize (3D Secure cards)
 
@@ -273,7 +273,7 @@ You will find the parameters that you need to send in the response from [Start P
 
 :::info
 
-To complete the Authorize action, please use the detailed information from the [Payment V2 API](/docs/payment-api/v2.x/intro.md) Authorize section.
+To complete the Authorize action, please use the detailed information from the [Payment V2 API](/docs/payment-api/v2.x/introduction) Authorize section.
 
 :::
 
@@ -325,7 +325,7 @@ To verify authentication you will need to send the request to verify-auth end po
 
 #### Example response
 
-Below you can find an example response. You can also head over to the [Payment V2 API page](/docs/payment-api/v2.x/intro.md) for more detailed information.
+Below you can find an example response. You can also head over to the [Payment V2 API page](/docs/payment-api/v2.x/introduction) for more detailed information.
 
 <details>
 <summary>View response</summary>
