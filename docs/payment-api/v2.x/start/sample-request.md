@@ -29,10 +29,6 @@ import TabItem from '@theme/TabItem';
     },
     "instrument": {
       "type": "card",
-      "account": "9900004810225098",
-      "expMonth": 1,
-      "expYear": 2023,
-      "secretCode": "111",
       "token": ""
     },
     "data": {

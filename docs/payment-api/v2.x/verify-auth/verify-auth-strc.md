@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Verify payment
+draft: true
 ---
 
 # Verify a payment

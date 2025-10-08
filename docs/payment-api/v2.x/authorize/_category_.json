@@ -1,4 +1,5 @@
 {
   "label": "Payment Authorize",
-  "position": 4
+  "position": 4,
+  "className": "hidden"
 }

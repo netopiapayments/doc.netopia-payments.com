@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Sample Response
+draft: true
 ---
 
 # Verify-auth response example
