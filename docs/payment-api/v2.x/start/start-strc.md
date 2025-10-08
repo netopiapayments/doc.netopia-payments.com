@@ -12,7 +12,7 @@ Based on the **start** end-point **response** you might need to continue the 3DS
 
 ### Live/production mode
 ```
-https://to.be.filled
+https://secure.mobilpay.ro/pay/payment/card/start
 ```
 
 ### Sandbox/test mode
@@ -37,10 +37,6 @@ https://secure.sandbox.netopia-payments.com/payment/card/start
     },
     "instrument": {
       "type": "string",
-      "account": "string",
-      "expMonth": int,
-      "expYear": int,
-      "secretCode": "string",
       "token": "string"
     },
     "data": {
@@ -144,10 +140,10 @@ Below you may find details on each of them:
         | Variable       | Type    | Description | Required | Belong to |
         | :---           | :----:  | :----       | :----: | ---: |
         | **type**       | string  | Method of payment ex. Card | Yes | Client |
-        | **account**    | string  | Card number                | Yes | Client |
-        | **expMonth**   | integer | Card expire month          | Yes | Client |
-        | **expYear**    | integer | Card expire year           | Yes | Client |
-        | **secretCode** | string  | Card CCV2 number           | Yes | Client |
+        | **account**    | string  | Card number                | No | Client |
+        | **expMonth**   | integer | Card expire month          | No | Client |
+        | **expYear**    | integer | Card expire year           | No | Client |
+        | **secretCode** | string  | Card CCV2 number           | No | Client |
         | **token**      | string  | The Payment token          | No | Operator |
 
       - **data** : The general information of the device used for make online payment
